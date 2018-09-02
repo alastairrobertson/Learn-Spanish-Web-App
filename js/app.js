@@ -10,7 +10,7 @@ function loadApplication() {
     
     
     document.body.appendChild(currentPage);
-    
+    menuStyling();
     
 }
 
@@ -30,19 +30,22 @@ function showMenu() {
         welcomeLabel = window.createH1();
         t = document.createTextNode("Welcome!");
         welcomeLabel.appendChild(t);
+        welcomeLabel.id = "welcomeHeader";
         header.appendChild(welcomeLabel);
 
 
        
 
         var img = createImg();
-        img.src = "images/spanish_flag.png"
-        img.id = "flag"
+        img.src = "images/spanish_flag.png";
+        img.id = "flag";
         
+
         header.appendChild(img);
         menuPage.appendChild(header);
+        
+        
 
-        navigationButtons = [4];
         
         
         
