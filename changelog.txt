@@ -1,3 +1,3 @@
 As part of the marking criteria - a list of days you worked and what you achieved
 
-2nd of September - Set up the project, created a Git repo
+2nd of September - Set up the project, created a Git repo, added files, added images
