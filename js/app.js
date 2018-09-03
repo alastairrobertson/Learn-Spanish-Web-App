@@ -1,16 +1,22 @@
 //loadApplication is called when the window loads.
-//
+// It's purpose is to set up the web app for use by showing the menu screen.
+//This method is only called by window.onload
 function loadApplication() {
-    console.log("loadApplication() called");
-    window.currentPage = null;
-
     
+    window.currentPage = null;
     //showMenu
     showMenu();
-    
-    
+    //add menu to document
     document.body.appendChild(currentPage);
+    //style the menu
     menuStyling();
+    //Setup buttons on menu
+    highscoresButtonMenu.addEventListener("click", showHighscores);
+    gameButtonMenu.addEventListener("click", showGame);
+    settingsButtonMenu.addEventListener("click", showSettings);
+    instructionsButtonMenu.addEventListener("click", showInstructions);
+
+
     
 }
 
@@ -24,46 +30,35 @@ function showMenu() {
         menuPage.classList.add("page");
         //menupage contents go here
         header = createCustomElement("HEADER");
-        
-
-
-        welcomeLabel = window.createH1();
+        //create heading
+        welcomeLabel = createH1();
         t = document.createTextNode("Welcome!");
         welcomeLabel.appendChild(t);
         welcomeLabel.id = "welcomeHeader";
         header.appendChild(welcomeLabel);
-
-
-       
-
+        //create spanish flag for the heading
         var img = createImg();
         img.src = "images/spanish_flag.png";
         img.id = "flag";
         
-
+        //add spanish flag to header and then add header to menu
         header.appendChild(img);
         menuPage.appendChild(header);
 
-        menuBody = createCustomElement("menuBody");
+        //create menu body where buttons will go
+        menuBody = createDiv();
+        menuBody.id = "menuBody";
+        //create each button on the menu
         for (i = 0; i < menuButtons.length; i++) {
-            console.log("does this get run");
-            button = createCustomElement("BUTTON");
+            
+            button = createButton();
             var t = document.createTextNode(menuButtons[i]);
             button.appendChild(t);
             button.id = menuButtons[i];
             menuBody.appendChild(button);
         }
         menuPage.appendChild(menuBody);
-
-
         
-        
-
-        
-        
-        
-       
-
         
     }
     //set the new page
@@ -95,6 +90,16 @@ function showHighscores() {
 
     //show the page
     currentPage.classList.remove("hide");
+}
+
+function showGame() {
+
+}
+function showInstructions() {
+
+}
+function showSettings() {
+
 }
 
 
