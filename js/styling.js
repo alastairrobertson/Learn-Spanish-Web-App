@@ -5,6 +5,7 @@
 //This method 
 
 window.menuStyling = function() {
+    //get elements
     var flag = this.document.getElementById("flag");
     var welcomeHeader = this.document.getElementById("welcomeHeader");
     var buttons = this.document.getElementById("menuBody");
@@ -49,6 +50,11 @@ window.menuStyling = function() {
 
 
 window.highscoresStyling = function() {
+    var labelheader = this.document.getElementById("highscoreslabel");
+
+
+    //style the label header
+    labelheader.style.textAlign = "center";
 
 
 

@@ -19,7 +19,9 @@ function loadApplication() {
 
     
 }
+function instructions() {
 
+}
 
 function showMenu() {
     //hide current page
@@ -83,6 +85,7 @@ function showHighscores() {
         highscoresLabel = window.createH1();
         t = document.createTextNode("Highscores!");
         highscoresLabel.appendChild(t);
+        highscoresLabel.id = "highscoreslabel";
         highscoresPage.appendChild(highscoresLabel);
         
     }
@@ -91,6 +94,8 @@ function showHighscores() {
 
     //show the page
     currentPage.classList.remove("hide");
+    document.body.appendChild(currentPage);
+    
 }
 
 function showGame() {
@@ -139,6 +144,7 @@ function showSettings() {
         window.settingsPage = createDiv();
         settingsPage.classList.add("page");
         //
+
         
     }
     //set the new page
