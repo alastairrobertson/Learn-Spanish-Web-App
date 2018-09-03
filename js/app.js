@@ -43,6 +43,19 @@ function showMenu() {
 
         header.appendChild(img);
         menuPage.appendChild(header);
+
+        menuBody = createCustomElement("menuBody");
+        for (i = 0; i < menuButtons.length; i++) {
+            console.log("does this get run");
+            button = createCustomElement("BUTTON");
+            var t = document.createTextNode(menuButtons[i]);
+            button.appendChild(t);
+            button.id = menuButtons[i];
+            menuBody.appendChild(button);
+        }
+        menuPage.appendChild(menuBody);
+
+
         
         
 

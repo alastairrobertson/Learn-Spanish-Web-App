@@ -3,3 +3,6 @@
 //window.settings.userScore = 0;
 //window.successfulCount = 0;
 //window.bonusScore = 1;
+window.menuButtons = ["Instructions", "Game", "High Scores", "Settings"];
+
+
