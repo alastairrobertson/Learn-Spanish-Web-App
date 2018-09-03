@@ -20,6 +20,7 @@ function loadApplication() {
     
 }
 
+
 function showMenu() {
     //hide current page
     if (currentPage != null)
@@ -93,13 +94,58 @@ function showHighscores() {
 }
 
 function showGame() {
+    //hide current page
+    if (currentPage != null)
+        currentPage.classList.add("hide");
+        
+    //check if the page hasn't been duplicated
+    if (typeof window.gamePage === "undefined") {
+        window.gamePage = createDiv();
+        gamePage.classList.add("page");
+        //
+        
+    }
+    //set the new page
+    currentPage = gamePage;
 
+    //show the page
+    currentPage.classList.remove("hide");
 }
 function showInstructions() {
+    //hide current page
+    if (currentPage != null)
+        currentPage.classList.add("hide");
+        
+    //check if the page hasn't been duplicated
+    if (typeof window.instructionsPage === "undefined") {
+        window.instructionsPage = createDiv();
+        instructionsPage.classList.add("page");
+        //
+        
+    }
+    //set the new page
+    currentPage = instructionsPage;
 
+    //show the page
+    currentPage.classList.remove("hide");
 }
 function showSettings() {
+    //hide current page
+    if (currentPage != null)
+        currentPage.classList.add("hide");
+        
+    //check if the page hasn't been duplicated
+    if (typeof window.settingsPage === "undefined") {
+        window.settingsPage = createDiv();
+        settingsPage.classList.add("page");
+        //
+        
+    }
+    //set the new page
+    currentPage = settingsPage;
 
+    //show the page
+    currentPage.classList.remove("hide");
 }
 
 
