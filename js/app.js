@@ -19,9 +19,7 @@ function loadApplication() {
 
     
 }
-function instructions() {
 
-}
 
 function showMenu() {
     //hide current page
@@ -107,7 +105,29 @@ function showGame() {
     if (typeof window.gamePage === "undefined") {
         window.gamePage = createDiv();
         gamePage.classList.add("page");
-        //
+        
+
+        window.gamescoreDisplay = createParagraph();
+        gamescoreDisplay.id = "gamescoreDisplay";
+        gamePage.appendChild(gamescoreDisplay);
+        window.gameExit = createButton();
+        gameExit.id = "gameExit";
+        gamePage.appendChild(gameExit);
+        
+
+        //Create treasure chests for each corner
+
+        
+        gamePage.appendChild(createChest("images/treasure_chest.png", "directionPlaces"));
+        
+        gamePage.appendChild(createChest("images/treasure_chest.png", "greetings"));
+
+        gamePage.appendChild(createChest("images/treasure_chest.png", "numbers"));
+        
+        gamePage.appendChild(createChest("images/treasure_chest.png", "eatingOut"));
+        
+
+
         
     }
     //set the new page
@@ -115,6 +135,7 @@ function showGame() {
 
     //show the page
     currentPage.classList.remove("hide");
+    document.body.appendChild(currentPage);
 }
 function showInstructions() {
     //hide current page

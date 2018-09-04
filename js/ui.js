@@ -34,6 +34,15 @@ window.createImg = function() {
 window.createCustomElement = function(customElement) {
 	return document.createElement(customElement);
 }
+window.createChest = function(src, id) {
+	var element = createImg();
+	element.src = src;
+	element.id = id;
+	return element;
+	
+
+
+}
 
 
 
