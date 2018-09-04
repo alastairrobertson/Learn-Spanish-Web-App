@@ -9,19 +9,16 @@ function loadApplication() {
     //add menu to document
     document.body.appendChild(currentPage);
     //style the menu
-    menuStyling();
+    menuSetup();
     //Setup buttons on menu
-    highscoresButtonMenu.addEventListener("click", showHighscores);
-    gameButtonMenu.addEventListener("click", showGame);
-    settingsButtonMenu.addEventListener("click", showSettings);
-    instructionsButtonMenu.addEventListener("click", showInstructions);
+    
 
 
     
 }
 
 
-function showMenu() {
+window.showMenu = function() {
     //hide current page
     if (currentPage != null)
         currentPage.classList.add("hide");
@@ -104,27 +101,43 @@ function showGame() {
     //check if the page hasn't been duplicated
     if (typeof window.gamePage === "undefined") {
         window.gamePage = createDiv();
+        
         gamePage.classList.add("page");
         
 
         window.gamescoreDisplay = createParagraph();
         gamescoreDisplay.id = "gamescoreDisplay";
+        gamescoreDisplay.innerHTML = "Gamescore: ";
         gamePage.appendChild(gamescoreDisplay);
         window.gameExit = createButton();
         gameExit.id = "gameExit";
+        gameExit.innerHTML = "Exit";
         gamePage.appendChild(gameExit);
+        
         
 
         //Create treasure chests for each corner
+        var treasureChestLocation = "images/treasure_chest.png";
+        
+        var test = createChest(treasureChestLocation, "directionPlaces");
+        var s = createParagraph();
+        var t = document.createTextNode("Direction and Places");
+        var container = createDiv();
+        container.id = "chest1";
+        s.appendChild(t);
+        
+        
+        container.appendChild(test);
+        container.appendChild(s);
+        gamePage.appendChild(container);
+        
+        //gamePage.appendChild(createChest(treasureChestLocation, "directionPlaces"));
+        gamePage.appendChild(createChest(treasureChestLocation, "greetings"));
+        gamePage.appendChild(createChest(treasureChestLocation, "numbers"));      
+        gamePage.appendChild(createChest(treasureChestLocation, "eatingOut"));
+        
+        
 
-        
-        gamePage.appendChild(createChest("images/treasure_chest.png", "directionPlaces"));
-        
-        gamePage.appendChild(createChest("images/treasure_chest.png", "greetings"));
-
-        gamePage.appendChild(createChest("images/treasure_chest.png", "numbers"));
-        
-        gamePage.appendChild(createChest("images/treasure_chest.png", "eatingOut"));
         
 
 
