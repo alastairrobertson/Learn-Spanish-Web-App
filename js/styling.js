@@ -73,6 +73,7 @@ window.gameElementsSetup = function() {
     window.eatingOut = this.document.getElementById("eatingOut");
     window.exitButton = this.document.getElementById("gameExit");
     window.gamescoreDisplay = this.document.getElementById("gamescoreDisplay");
+    
     console.log(exitButton);
     
 

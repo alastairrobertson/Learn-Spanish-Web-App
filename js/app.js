@@ -92,6 +92,18 @@ function showHighscores() {
     document.body.appendChild(currentPage);
     
 }
+function createContainerWithChest(containerID, treasureChestLocation, textNode, id) {
+    var chestImage = createChest(treasureChestLocation, id);
+    var p = createParagraph();
+    p.id = id;
+    var t = document.createTextNode(textNode);
+    var container = createDiv();
+    container.id = containerID;
+    p.appendChild(t);
+    container.appendChild(chestImage);
+    container.appendChild(p);
+    return container;
+}
 
 function showGame() {
     //hide current page
@@ -119,22 +131,31 @@ function showGame() {
         //Create treasure chests for each corner
         var treasureChestLocation = "images/treasure_chest.png";
         
-        var test = createChest(treasureChestLocation, "directionPlaces");
-        var s = createParagraph();
-        var t = document.createTextNode("Direction and Places");
-        var container = createDiv();
-        container.id = "chest1";
-        s.appendChild(t);
+        // var chestImage = createChest(treasureChestLocation, "directionPlaces");
+        // var p = createParagraph();
+        // var t = document.createTextNode("Direction and Places");
+        // var container = createDiv();
+        // container.id = "chest1";
+        // s.appendChild(t);
         
         
-        container.appendChild(test);
-        container.appendChild(s);
-        gamePage.appendChild(container);
+        // container.appendChild(chestImage);
+        // container.appendChild(p);
+        // gamePage.appendChild(container);
+        // /////////////
+        gamePage.appendChild(createContainerWithChest("chest1", treasureChestLocation, "Direction and Places", "directionPlaces"));
+        gamePage.appendChild(createContainerWithChest("chest2", treasureChestLocation, "Greetings", "greetings"));
+        gamePage.appendChild(createContainerWithChest("chest3", treasureChestLocation, "Numbers", "numbers"));
+        gamePage.appendChild(createContainerWithChest("chest4", treasureChestLocation, "Eating Out", "eatingOut"));
         
-        //gamePage.appendChild(createChest(treasureChestLocation, "directionPlaces"));
-        gamePage.appendChild(createChest(treasureChestLocation, "greetings"));
-        gamePage.appendChild(createChest(treasureChestLocation, "numbers"));      
-        gamePage.appendChild(createChest(treasureChestLocation, "eatingOut"));
+        
+
+
+
+
+        //gamePage.appendChild(createChest(treasureChestLocation, "greetings"));
+        //gamePage.appendChild(createChest(treasureChestLocation, "numbers"));      
+        //gamePage.appendChild(createChest(treasureChestLocation, "eatingOut"));
         
         
 
@@ -149,6 +170,7 @@ function showGame() {
     //show the page
     currentPage.classList.remove("hide");
     document.body.appendChild(currentPage);
+    gameEngine.beginGame();
 }
 function showInstructions() {
     //hide current page

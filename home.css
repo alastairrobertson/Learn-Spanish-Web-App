@@ -29,14 +29,35 @@ body {
     display: inline-block;
     
     
+    
 }
 #chest1 p {
+    transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -khtml-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
     
-    position: inherit;
-    padding-top: 11%;
+    padding-top: 15%;
+
+
     
    
       
+}
+#chest4 p {
+    padding-bottom: 15%;
+    text-align: right;
+}
+#chest3 p {
+    transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -khtml-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    padding-bottom: 15%;
 }
 #numbers {
     transform: scale(-1, 1);
@@ -50,7 +71,23 @@ body {
     position: absolute;
     bottom: 0%; left: 0;
     
+    
 }
+#chest2 p {
+    
+    padding-top: 15%;
+    text-align: right;
+
+}
+
+#draggableWord {
+    text-align: center;
+    position: relative;
+    bottom: 50%;
+    top: 35%;
+    font-size: 200%;
+}
+
 #greetings {
     width: 15%;
     height: auto;

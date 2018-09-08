@@ -3,3 +3,5 @@ As part of the marking criteria - a list of days you worked and what you achieve
 2nd of September - Set up the project, created a Git repo, added files, added images
 3rd of September - Created Menu page with buttons, image and text
 4th of September - Added chests and exit button to game page 
+5th of September - Implemented dragging and new word display
+8th of September

@@ -1,392 +1,392 @@
 window.gameData = [
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "¿dónde está?",
+      "Category": "directionPlaces",
+      "WordOrSentence": "¿dónde está?",
       "Translation": "Where is …?"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "¿Esta lejos?",
+      "Category": "directionPlaces",
+      "WordOrSentence": "¿Esta lejos?",
       "Translation": "How far is it?"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "¿Cómo llegó?",
+      "Category": "directionPlaces",
+      "WordOrSentence": "¿Cómo llegó?",
       "Translation": "How do I get there?"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "señalemelo en el mapa",
+      "Category": "directionPlaces",
+      "WordOrSentence": "señalemelo en el mapa",
       "Translation": "Can you show me where it is on the map?"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Gira a la izquierda",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Gira a la izquierda",
       "Translation": "Turn left"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Gira a la derecha",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Gira a la derecha",
       "Translation": "Turn right"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Arriba",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Arriba",
       "Translation": "Up"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Izquierda",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Izquierda",
       "Translation": "Left"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Derecha",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Derecha",
       "Translation": "Right"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Frente a",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Frente a",
       "Translation": "In front of"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "detrás",
+      "Category": "directionPlaces",
+      "WordOrSentence": "detrás",
       "Translation": "Behind"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Debajo",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Debajo",
       "Translation": "Under"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Aquí",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Aquí",
       "Translation": "Here"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Allí",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Allí",
       "Translation": "There"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Lugar",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Lugar",
       "Translation": "Place"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Aeropuerto",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Aeropuerto",
       "Translation": "Airport"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Cajero Automático",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Cajero Automático",
       "Translation": "ATM"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Banco",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Banco",
       "Translation": "Bank"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Playa",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Playa",
       "Translation": "Beach"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Droguería",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Droguería",
       "Translation": "Chemist"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Farmacia",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Farmacia",
       "Translation": "Pharmacy"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Gran almacen",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Gran almacen",
       "Translation": "Department Store"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Mercado",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Mercado",
       "Translation": "Market"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Comisaría de Policía",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Comisaría de Policía",
       "Translation": "Police Station"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Supermercado",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Supermercado",
       "Translation": "Supermarket"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Restaurante",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Restaurante",
       "Translation": "Restaurant"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Estación de metro",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Estación de metro",
       "Translation": "Underground station"
     },
     {
-      "Category": "Direction and Places",
-      "Word/Sentence": "Estación de tren",
+      "Category": "directionPlaces",
+      "WordOrSentence": "Estación de tren",
       "Translation": "Train station"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "Hola",
+      "Category": "greetings",
+      "WordOrSentence": "Hola",
       "Translation": "Hello"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "¿Cómo estás?",
+      "Category": "greetings",
+      "WordOrSentence": "¿Cómo estás?",
       "Translation": "How are you?"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "Bien, gracias",
+      "Category": "greetings",
+      "WordOrSentence": "Bien, gracias",
       "Translation": "I’m fine thanks"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "¿Cómo te llamas?",
+      "Category": "greetings",
+      "WordOrSentence": "¿Cómo te llamas?",
       "Translation": "What’s your name?"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "Me llamo…",
+      "Category": "greetings",
+      "WordOrSentence": "Me llamo…",
       "Translation": "My name is…"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "Hasta luego",
+      "Category": "greetings",
+      "WordOrSentence": "Hasta luego",
       "Translation": "See you later"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "Adíos",
+      "Category": "greetings",
+      "WordOrSentence": "Adíos",
       "Translation": "Goodbye"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "Cuídate",
+      "Category": "greetings",
+      "WordOrSentence": "Cuídate",
       "Translation": "Take care"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "¿Y tú?",
+      "Category": "greetings",
+      "WordOrSentence": "¿Y tú?",
       "Translation": "How about you?"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "Encantado de conocerte",
+      "Category": "greetings",
+      "WordOrSentence": "Encantado de conocerte",
       "Translation": "I’m pleased to meet you"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "Hace tiempo",
+      "Category": "greetings",
+      "WordOrSentence": "Hace tiempo",
       "Translation": "It’s been a while"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "¿Puedes hablar inglés?",
+      "Category": "greetings",
+      "WordOrSentence": "¿Puedes hablar inglés?",
       "Translation": "Can you speak English?"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "Puedo hablar un poco de español",
+      "Category": "greetings",
+      "WordOrSentence": "Puedo hablar un poco de español",
       "Translation": "I can speak Spanish a little"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "No puedo hablar español",
+      "Category": "greetings",
+      "WordOrSentence": "No puedo hablar español",
       "Translation": "I can’t speak Spanish"
     },
     {
-      "Category": "Greetings",
-      "Word/Sentence": "¿Cuántos años tienes?",
+      "Category": "greetings",
+      "WordOrSentence": "¿Cuántos años tienes?",
       "Translation": "How old are you?"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Cero",
+      "Category": "numbers",
+      "WordOrSentence": "Cero",
       "Translation": "0"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Uno",
+      "Category": "numbers",
+      "WordOrSentence": "Uno",
       "Translation": "1"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Dos",
+      "Category": "numbers",
+      "WordOrSentence": "Dos",
       "Translation": "2"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Tres",
+      "Category": "numbers",
+      "WordOrSentence": "Tres",
       "Translation": "3"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Cuatro",
+      "Category": "numbers",
+      "WordOrSentence": "Cuatro",
       "Translation": "4"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Cinco",
+      "Category": "numbers",
+      "WordOrSentence": "Cinco",
       "Translation": "5"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Seis",
+      "Category": "numbers",
+      "WordOrSentence": "Seis",
       "Translation": "6"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Siete",
+      "Category": "numbers",
+      "WordOrSentence": "Siete",
       "Translation": "7"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Ocho",
+      "Category": "numbers",
+      "WordOrSentence": "Ocho",
       "Translation": "8"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Nueve",
+      "Category": "numbers",
+      "WordOrSentence": "Nueve",
       "Translation": "9"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Diez",
+      "Category": "numbers",
+      "WordOrSentence": "Diez",
       "Translation": "10"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Cincuenta",
+      "Category": "numbers",
+      "WordOrSentence": "Cincuenta",
       "Translation": "50"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Cien",
+      "Category": "numbers",
+      "WordOrSentence": "Cien",
       "Translation": "100"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Mil",
+      "Category": "numbers",
+      "WordOrSentence": "Mil",
       "Translation": "1000"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Cienmil",
+      "Category": "numbers",
+      "WordOrSentence": "Cienmil",
       "Translation": "100000"
     },
     {
-      "Category": "Numbers",
-      "Word/Sentence": "Un millón",
+      "Category": "numbers",
+      "WordOrSentence": "Un millón",
       "Translation": "1000000"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Salud",
+      "Category": "eatingOut",
+      "WordOrSentence": "Salud",
       "Translation": "Cheers"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Hielo, por favor",
+      "Category": "eatingOut",
+      "WordOrSentence": "Hielo, por favor",
       "Translation": "Ice please"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "¿Tienen comida vegetarian?",
+      "Category": "eatingOut",
+      "WordOrSentence": "¿Tienen comida vegetarian?",
       "Translation": "Do you have vegetarian food?"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Para llevar",
+      "Category": "eatingOut",
+      "WordOrSentence": "Para llevar",
       "Translation": "Take away"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Vino",
+      "Category": "eatingOut",
+      "WordOrSentence": "Vino",
       "Translation": "Wine"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Cerveza",
+      "Category": "eatingOut",
+      "WordOrSentence": "Cerveza",
       "Translation": "Beer"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Zumo",
+      "Category": "eatingOut",
+      "WordOrSentence": "Zumo",
       "Translation": "Juice"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Bebidas",
+      "Category": "eatingOut",
+      "WordOrSentence": "Bebidas",
       "Translation": "Drinks"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Tengo hambre",
+      "Category": "eatingOut",
+      "WordOrSentence": "Tengo hambre",
       "Translation": "I’m hungry"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Beber",
+      "Category": "eatingOut",
+      "WordOrSentence": "Beber",
       "Translation": "To drink"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Comer",
+      "Category": "eatingOut",
+      "WordOrSentence": "Comer",
       "Translation": "To eat"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Desayuno",
+      "Category": "eatingOut",
+      "WordOrSentence": "Desayuno",
       "Translation": "Breakfast"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Almuerzo",
+      "Category": "eatingOut",
+      "WordOrSentence": "Almuerzo",
       "Translation": "Lunch"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Cena",
+      "Category": "eatingOut",
+      "WordOrSentence": "Cena",
       "Translation": "Dinner"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Tentenpie / Tapas",
+      "Category": "eatingOut",
+      "WordOrSentence": "Tentenpie / Tapas",
       "Translation": "Snack"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Comida",
+      "Category": "eatingOut",
+      "WordOrSentence": "Comida",
       "Translation": "Food"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Carne",
+      "Category": "eatingOut",
+      "WordOrSentence": "Carne",
       "Translation": "Meat"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Pollo",
+      "Category": "eatingOut",
+      "WordOrSentence": "Pollo",
       "Translation": "Chicken"
     },
     {
-      "Category": "Eating out",
-      "Word/Sentence": "Lo mismo para mí",
+      "Category": "eatingOut",
+      "WordOrSentence": "Lo mismo para mí",
       "Translation": "I’ll have the same"
     }
    ];
