@@ -6,10 +6,41 @@ window.gameEngine.newWord = function() {
     return gameData[randomNumber];
 
 }
-function correctDrag(targ, wordObj) {
+
+function displayNewWord() {
+    document.getElementById("draggableWord").remove();
+    wordObject = null;
+    p = null;
+    t = null;
+    wordObject = gameEngine.newWord();
+    p = createParagraph();
+    p.id = "draggableWord";
+    p.removeC
+    t = document.createTextNode(wordObject.WordOrSentence)
+    p.appendChild(t);
+    gamePage.appendChild(p);
+    
+    word = document.getElementById("draggableWord");
+    word.setAttribute("draggable", "true");
+}
+
+function correctDrag(targ, wordObj, wordElement) {
     if (targ.id == wordObj.Category) {
         console.log("we got a match");
+        //s
         successfulCount++;
+        wordElement.style.visiblity = "hidden";
+        userScore = bonusScore * 1;
+        var scoreDisplay = document.getElementById("gamescoreDisplay");
+        console.log(scoreDisplay);
+        scoreDisplay.innerHTML = "Gamescore: " + userScore;
+        console.log(scoreDisplay.innerHTML);
+        displayNewWord();
+
+
+
+        
+
 
     }
     else {
@@ -17,6 +48,7 @@ function correctDrag(targ, wordObj) {
         successfulCount = 0;
         //bonus score multiplier restarted
         bonusScore = 1;
+
     }
 }
 
@@ -27,20 +59,24 @@ window.gameEngine.beginGame = function() {
     var greetings = document.getElementById("greetings");
     var numbers = document.getElementById("numbers");
     var eatingOut = document.getElementById("eatingOut");
+    
 
    
 
 
 
     ////
-    //display new word
-    
+    //display first word
+    //displayNewWord();
     wordObject = gameEngine.newWord();
     p = createParagraph();
     p.id = "draggableWord";
     t = document.createTextNode(wordObject.WordOrSentence)
     p.appendChild(t);
+    console.log("wahoo");
+    console.log(gamePage);
     gamePage.appendChild(p);
+    console.log(gamePage);
     
     word = document.getElementById("draggableWord");
     word.setAttribute("draggable", "true");
@@ -78,22 +114,18 @@ window.gameEngine.beginGame = function() {
 
     /* events fired on the drop targets */
     document.addEventListener("dragover", function( event ) {
-        console.log("dragover");
+        
         // prevent default to allow drop
         event.preventDefault();
     }, false);
 
     document.addEventListener("dragenter", function( event ) {
-        console.log("dragcenter");
-        // highlight potential drop target when the draggable element enters it
-        if ( event.target.className == "dropzone" ) {
-            event.target.style.background = "purple";
-        }
+        
 
     }, false);
 
     document.addEventListener("dragleave", function( event ) {
-        console.log("dragleave");
+        
        
 
     }, false);
@@ -107,12 +139,9 @@ window.gameEngine.beginGame = function() {
         console.log(event.target);
         console.log(event.target.id);
         console.log(wordObject);
-        correctDrag(event.target, wordObject);
-        if ( event.target.className == "dropzone" ) {
-            event.target.style.background = "";
-            dragged.parentNode.removeChild( dragged );
-            event.target.appendChild( dragged );
-        }
+        correctDrag(event.target, wordObject, word);
+        
+        
 
         
         
