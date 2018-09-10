@@ -125,24 +125,19 @@ function showGame() {
         gameExit.id = "gameExit";
         gameExit.innerHTML = "Exit";
         gamePage.appendChild(gameExit);
+        gameExit.onclick = function() {
+            //maybe save score or something
+
+            //show menu
+            showMenu();
+        }
         
         
 
         //Create treasure chests for each corner
         var treasureChestLocation = "images/treasure_chest.png";
         
-        // var chestImage = createChest(treasureChestLocation, "directionPlaces");
-        // var p = createParagraph();
-        // var t = document.createTextNode("Direction and Places");
-        // var container = createDiv();
-        // container.id = "chest1";
-        // s.appendChild(t);
         
-        
-        // container.appendChild(chestImage);
-        // container.appendChild(p);
-        // gamePage.appendChild(container);
-        // /////////////
         gamePage.appendChild(createContainerWithChest("chest1", treasureChestLocation, "Direction and Places", "directionPlaces"));
         gamePage.appendChild(createContainerWithChest("chest2", treasureChestLocation, "Greetings", "greetings"));
         gamePage.appendChild(createContainerWithChest("chest3", treasureChestLocation, "Numbers", "numbers"));
@@ -153,9 +148,7 @@ function showGame() {
 
 
 
-        //gamePage.appendChild(createChest(treasureChestLocation, "greetings"));
-        //gamePage.appendChild(createChest(treasureChestLocation, "numbers"));      
-        //gamePage.appendChild(createChest(treasureChestLocation, "eatingOut"));
+        
         
         
 

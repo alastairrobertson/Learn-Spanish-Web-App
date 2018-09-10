@@ -2,10 +2,20 @@ window.gameEngine = {};
 
 window.gameEngine.newWord = function() {
     randomNumber = Math.floor((Math.random() * gameData.length) + 1);
-    console.log()
-    return gameData[randomNumber];
+    console.log(randomNumber);
+    return gameData[randomNumber - 1];
 
 }
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
+
+ 
 
 function displayNewWord() {
     document.getElementById("draggableWord").remove();
@@ -15,7 +25,7 @@ function displayNewWord() {
     wordObject = gameEngine.newWord();
     p = createParagraph();
     p.id = "draggableWord";
-    p.removeC
+    //p.removeC
     t = document.createTextNode(wordObject.WordOrSentence)
     p.appendChild(t);
     gamePage.appendChild(p);
@@ -24,22 +34,40 @@ function displayNewWord() {
     word.setAttribute("draggable", "true");
 }
 
-function correctDrag(targ, wordObj, wordElement) {
+
+function successfulDrag(targ, wordObj, wordElement) {
     if (targ.id == wordObj.Category) {
         console.log("we got a match");
+
+        
         //s
         successfulCount++;
         wordElement.style.visiblity = "hidden";
-        userScore = bonusScore * 1;
+        if (successfulCount > 1) {
+            bonusScore = 2;
+        }
+
+        userScore = (bonusScore * 1) + userScore;
         var scoreDisplay = document.getElementById("gamescoreDisplay");
         console.log(scoreDisplay);
+
+        document.body.classList.add("success");
+        setTimeout(function() {
+            document.body.classList.remove("success");
+        }, 1000 * 3);
+        
+
+        scoreDisplay.innerHTML = null;
         scoreDisplay.innerHTML = "Gamescore: " + userScore;
         console.log(scoreDisplay.innerHTML);
-        displayNewWord();
-
-
-
+        console.log("__________________________________________________");
+        console.log(document.getElementById("draggableWord").childNodes[0]);
         
+        p = createParagraph();
+        t = document.createTextNode("Last correct word translation: " + wordObj.Translation);
+        p.appendChild(t);
+        scoreDisplay.appendChild(p);
+        displayNewWord();
 
 
     }
@@ -48,6 +76,12 @@ function correctDrag(targ, wordObj, wordElement) {
         successfulCount = 0;
         //bonus score multiplier restarted
         bonusScore = 1;
+        document.body.classList.add("fail");
+        setTimeout(function() {
+            document.body.classList.remove("fail");
+        }, 1000 * 3);
+        
+
 
     }
 }
@@ -100,11 +134,8 @@ window.gameEngine.beginGame = function() {
 
     document.addEventListener("dragend", function( event ) {
         console.log("dragend");
-        // reset the transparency
-        //event.target.style.opacity = "";
         
-        //maybe create a new word here and display
-        //os restart loop
+        
 
 
 
@@ -120,11 +151,12 @@ window.gameEngine.beginGame = function() {
     }, false);
 
     document.addEventListener("dragenter", function( event ) {
-        
+        console.log("dragcenter");
 
     }, false);
 
     document.addEventListener("dragleave", function( event ) {
+        console.log("dragleave");
         
        
 
@@ -139,7 +171,8 @@ window.gameEngine.beginGame = function() {
         console.log(event.target);
         console.log(event.target.id);
         console.log(wordObject);
-        correctDrag(event.target, wordObject, word);
+        successfulDrag(event.target, wordObject, word);
+        
         
         
 
