@@ -7,4 +7,5 @@ prior - Planning, testing javascript concepts
 5th of September - Implemented dragging and new word display
 8th of September - Implemented CSS animations
 9th of September - Got scoring working
-10th of September - 
+10th of September - testing game
+11th of September - Creating instructions page and styling it

@@ -115,8 +115,6 @@ function showGame() {
         window.gamePage = createDiv();
         
         gamePage.classList.add("page");
-        
-
         window.gamescoreDisplay = createParagraph();
         gamescoreDisplay.id = "gamescoreDisplay";
         gamescoreDisplay.innerHTML = "Gamescore: ";
@@ -130,10 +128,8 @@ function showGame() {
 
             //show menu
             showMenu();
-        }
+        };
         
-        
-
         //Create treasure chests for each corner
         var treasureChestLocation = "images/treasure_chest.png";
         
@@ -143,17 +139,6 @@ function showGame() {
         gamePage.appendChild(createContainerWithChest("chest3", treasureChestLocation, "Numbers", "numbers"));
         gamePage.appendChild(createContainerWithChest("chest4", treasureChestLocation, "Eating Out", "eatingOut"));
         
-        
-
-
-
-
-        
-        
-        
-
-        
-
 
         
     }
@@ -174,7 +159,39 @@ function showInstructions() {
     if (typeof window.instructionsPage === "undefined") {
         window.instructionsPage = createDiv();
         instructionsPage.classList.add("page");
-        //
+        var instructionsPageElements = [];
+        //push reuseable ui components to array
+        instructionsPageElements.push(createCustomLabel("instructionsLabel", "Instructions"));
+        instructionsPageElements.push(createCustomParagraph("instructionsParagraph", InstructionsString));
+        instructionsPageElements.push(createCustomButton("playButton", "Play Now"));
+        instructionsPageElements.push(createCustomButton("menuButton", "Menu"));
+        
+        var instructionsDiv = createDiv();
+        instructionsDiv.id = "instructionsDiv";
+        //loop over each element in the instructionsPageElements which holds
+        //html elements, if the element is a button, 
+        //then add the correct method to redirect the user to a new page
+        //also add html elelments to the div
+        for (i=0; i < instructionsPageElements.length; i++) {
+            if (i == 2) {
+                instructionsPageElements[i].onclick = function() {
+                    showGame();
+                }
+            }
+            if (i == 3) {
+                instructionsPageElements[i].onclick = function() {
+                    showMenu();
+                }
+            }
+            instructionsDiv.appendChild(instructionsPageElements[i]);
+        }
+        //append div of instruction html elements to instructionsPage
+        instructionsPage.appendChild(instructionsDiv);
+
+       
+
+        
+        
         
     }
     //set the new page
@@ -182,6 +199,7 @@ function showInstructions() {
 
     //show the page
     currentPage.classList.remove("hide");
+    document.body.appendChild(currentPage);
 }
 function showSettings() {
     //hide current page
@@ -192,7 +210,35 @@ function showSettings() {
     if (typeof window.settingsPage === "undefined") {
         window.settingsPage = createDiv();
         settingsPage.classList.add("page");
-        //
+        var settingsPageElements = [];
+        var settingsContainer = createDiv();
+        settingsContainer.id = "settingsContainer";
+        //settingsContainer.appendChild(createCustomCheckbox("soundCheckbox", "Sound"));
+        //settingsContainer.appendChild(createCustomLabel("checkboxLabel", "Sound", "soundCheckbox"));
+        settingsPageElements.push(createCustomLabel("settingsLabel", "Settings"));
+        settingsPageElements.push(createCustomCheckbox("soundCheckbox", "Sound"));
+        settingsPageElements.push(createCustomLabel("checkboxLabel", "Sound", "soundCheckbox"));
+        settingsPageElements.push(createCustomButton("saveButton", "Save"));
+        settingsPageElements.push(createCustomButton("backButton", "Back"));
+        // createCustomCheckbox("soundCheckbox", "Sound");
+        // createCustomLabel("checkboxLabel", "Sound", "soundCheckbox");
+        var settingsDiv = createDiv();
+        settingsDiv.id = "settingsDiv";
+        for (i=0; i < settingsPageElements.length; i++) {
+            if (i == 3) {
+                settingsPageElements[i].onclick = function() {
+                    //save
+                }
+            }
+            if (i == 4) {
+                settingsPageElements[i].onclick = function() {
+                    showMenu();
+                }
+            }
+            settingsDiv.appendChild(settingsPageElements[i]);
+        }
+        settingsPage.appendChild(settingsDiv);
+
 
         
     }
@@ -201,6 +247,7 @@ function showSettings() {
 
     //show the page
     currentPage.classList.remove("hide");
+    document.body.appendChild(currentPage);
 }
 
 

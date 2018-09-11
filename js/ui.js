@@ -43,6 +43,60 @@ window.createChest = function(src, id) {
 
 
 }
+window.createCustomButton = function(id, text) {
+	var element = createButton();
+	element.id = id;
+	var t = document.createTextNode(text);
+	element.appendChild(t);
+	return element;
+}
+window.createCustomParagraph = function(id, text) {
+	var element = createParagraph();
+	element.id = id;
+	var t = this.document.createTextNode(text);
+	element.appendChild(t);
+	return element;
+}
+window.createCustomLabel = function(id, text) {
+	var element = createH1();
+	element.id = id;
+	var t = this.document.createTextNode(text);
+	element.appendChild(t);
+	return element;
+
+}
+window.createInstructionsElements = function() {
+	var instructionsPlayButton = createButton();
+	var instructionsExitButton = createButton();
+	var instructionsText = createParagraph();
+	var instructionsLabel = createH1();
+
+}
+window.createCustomTextBox = function(id, text) {
+	var element = createInput();
+	element.id = id;
+	var t = this.document.createTextNode(text);
+	element.appendChild(t);
+	return element;
+}
+window.createCustomCheckbox = function(id, text) {
+	var element = createCustomElement("input");
+	element.type = "checkbox";
+	//element.name = "name";
+	element.value = text;
+	element.id = id;
+	return element
+}
+window.createCustomLabel = function(id, text, checkboxID) {
+	element = createCustomElement("label");
+	element.id = id;
+	element.htmlFor = checkboxID;
+	element.appendChild(this.document.createTextNode(text));
+	return element;
+
+
+
+}
 
 
 
