@@ -5,7 +5,7 @@ window.userScore = 0;
 window.successfulCount = 0;
 window.bonusScore = 1;
 window.menuButtons = ["Instructions", "Game", "High Scores", "Settings"];
-window.highscoresStore = {"user1":0, "user2":0, "user3":0};
+
 window.InstructionsString = "Welcome to this spanish learning web app! " +
                             "This app is designed to be be a fun activity for learning spanish. " +
                             "It is estimated that more than 437 million people speak Spanish as a native language, " + 
@@ -19,5 +19,47 @@ window.InstructionsString = "Welcome to this spanish learning web app! " +
                             "along with the Last correct word translation being display under the gamescore. " +
                             "If you get two correct drags in a row, you will activate bonuscore which doubles the points you get on a correct drag streak. " +
                             "";
+window.saveScore = function() {
+    
+    
+    if (this.localStorage.getItem("highscores") === null) {
+        //local storage could not find highscores
+        //we now create a new highscores
+        var v = [];
+        v.push([settings.currentUser, userScore]);
+        
+        this.localStorage.setItem("highscores", JSON.stringify(v));
+        
+    } else {
+        
+        var highscores = JSON.parse(this.localStorage.getItem("highscores"));
+        console.log(typeof highscores);
+        console.log(highscores);
+        console.log(highscores.length);
+        for (i = 0; i < highscores.length; i++) {
+            if (highscores[i][1] < userScore) {
+                
+
+                var v = [settings.currentUser, userScore];
+                
+                console.log(settings.currentUser);
+                console.log(userScore);
+                highscores.splice(i, 0, v);
+                this.localStorage.setItem("highscores", JSON.stringify(highscores));
+                break;
+            }
+        }
+
+
+
+    }
+   
+    
+    
+    //reset score 
+    userScore = 0;
+    successfulCount = 0;
+    bonusScore = 1;
+}
 
 

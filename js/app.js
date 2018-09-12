@@ -77,11 +77,33 @@ function showHighscores() {
         window.highscoresPage = createDiv();
         highscoresPage.classList.add("page");
         //highscorespage contents go here
+        var highscoresDiv = createDiv();
+        highscoresDiv.id = "highscoresDiv";
         highscoresLabel = window.createH1();
         t = document.createTextNode("Highscores!");
         highscoresLabel.appendChild(t);
         highscoresLabel.id = "highscoreslabel";
-        highscoresPage.appendChild(highscoresLabel);
+        highscoresDiv.appendChild(highscoresLabel);
+        //loop through highscores
+        var highscoresStore = JSON.parse(localStorage.getItem("highscores"));
+        console.log(highscoresStore);
+        var highscoresElement = createDiv();
+        highscoresElement.id = "highscoresElement";
+        for (i =0; i < highscoresStore.length; i++) {
+            var d = createDiv();
+            var t = document.createTextNode(highscoresStore[i][0] + " - " + highscoresStore[i][1]);
+            d.appendChild(t);
+            highscoresElement.appendChild(d);
+        }
+        highscoresDiv.appendChild(highscoresElement);
+        var highscoresBackButton = createCustomButton("highscoresBackButton", "Back");
+        highscoresDiv.appendChild(highscoresBackButton);
+        highscoresPage.appendChild(highscoresDiv);
+        
+        highscoresBackButton.onclick = function() {
+            showMenu();
+        }
+
         
     }
     //set the new page
@@ -105,6 +127,7 @@ function createContainerWithChest(containerID, treasureChestLocation, textNode, 
     return container;
 }
 
+
 function showGame() {
     //hide current page
     if (currentPage != null)
@@ -125,7 +148,7 @@ function showGame() {
         gamePage.appendChild(gameExit);
         gameExit.onclick = function() {
             //maybe save score or something
-
+            saveScore();
             //show menu
             showMenu();
         };
@@ -161,7 +184,7 @@ function showInstructions() {
         instructionsPage.classList.add("page");
         var instructionsPageElements = [];
         //push reuseable ui components to array
-        instructionsPageElements.push(createCustomLabel("instructionsLabel", "Instructions"));
+        instructionsPageElements.push(createCustomLabelH1("instructionsLabel", "Instructions"));
         instructionsPageElements.push(createCustomParagraph("instructionsParagraph", InstructionsString));
         instructionsPageElements.push(createCustomButton("playButton", "Play Now"));
         instructionsPageElements.push(createCustomButton("menuButton", "Menu"));
@@ -213,29 +236,34 @@ function showSettings() {
         var settingsPageElements = [];
         var settingsContainer = createDiv();
         settingsContainer.id = "settingsContainer";
-        //settingsContainer.appendChild(createCustomCheckbox("soundCheckbox", "Sound"));
-        //settingsContainer.appendChild(createCustomLabel("checkboxLabel", "Sound", "soundCheckbox"));
-        settingsPageElements.push(createCustomLabel("settingsLabel", "Settings"));
+        
+        settingsPageElements.push(createCustomLabelH1("settingsLabel", "Settings"));
         settingsPageElements.push(createCustomCheckbox("soundCheckbox", "Sound"));
         settingsPageElements.push(createCustomLabel("checkboxLabel", "Sound", "soundCheckbox"));
+        settingsPageElements.push(createCustomTextBox("userTextbox", settings.currentUser));
         settingsPageElements.push(createCustomButton("saveButton", "Save"));
         settingsPageElements.push(createCustomButton("backButton", "Back"));
-        // createCustomCheckbox("soundCheckbox", "Sound");
-        // createCustomLabel("checkboxLabel", "Sound", "soundCheckbox");
+        
         var settingsDiv = createDiv();
         settingsDiv.id = "settingsDiv";
         for (i=0; i < settingsPageElements.length; i++) {
-            if (i == 3) {
+            if (i == 4) {
                 settingsPageElements[i].onclick = function() {
                     //save
+                    var b = document.getElementById("userTextbox");
+                    settings.currentUser = b.value;
                 }
             }
-            if (i == 4) {
+            if (i == 5) {
                 settingsPageElements[i].onclick = function() {
                     showMenu();
                 }
             }
-            settingsDiv.appendChild(settingsPageElements[i]);
+            var newDiv = createDiv();
+            newDiv.appendChild(settingsPageElements[i]);
+            settingsDiv.appendChild(newDiv);
+            //settingsDiv.appendChild(settingsPageElements[i]);
+            
         }
         settingsPage.appendChild(settingsDiv);
 

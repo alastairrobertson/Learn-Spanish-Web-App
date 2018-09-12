@@ -57,7 +57,7 @@ window.createCustomParagraph = function(id, text) {
 	element.appendChild(t);
 	return element;
 }
-window.createCustomLabel = function(id, text) {
+window.createCustomLabelH1 = function(id, text) {
 	var element = createH1();
 	element.id = id;
 	var t = this.document.createTextNode(text);
@@ -73,7 +73,9 @@ window.createInstructionsElements = function() {
 
 }
 window.createCustomTextBox = function(id, text) {
-	var element = createInput();
+	var element = createCustomElement("input");
+	element.type = "text";
+	element.value = text;
 	element.id = id;
 	var t = this.document.createTextNode(text);
 	element.appendChild(t);

@@ -9,3 +9,5 @@ prior - Planning, testing javascript concepts
 9th of September - Got scoring working
 10th of September - testing game
 11th of September - Creating instructions page and styling it
+12th of September - Started implementing persistent storage on local machine for high scores
+
