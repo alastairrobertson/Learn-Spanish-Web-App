@@ -149,6 +149,8 @@ function showGame() {
         gameExit.onclick = function() {
             //maybe save score or something
             saveScore();
+            //remove current word in preperations for next game
+            document.getElementById("draggableWord").remove();
             //show menu
             showMenu();
         };
@@ -252,6 +254,11 @@ function showSettings() {
                     //save
                     var b = document.getElementById("userTextbox");
                     settings.currentUser = b.value;
+                    if (document.getElementById("soundCheckbox").checked) {
+
+                    } else {
+
+                    }
                 }
             }
             if (i == 5) {
@@ -266,6 +273,7 @@ function showSettings() {
             
         }
         settingsPage.appendChild(settingsDiv);
+        
 
 
         

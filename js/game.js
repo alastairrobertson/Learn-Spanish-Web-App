@@ -67,6 +67,12 @@ function successfulDrag(targ, wordObj, wordElement) {
         t = document.createTextNode("Last correct word translation: " + wordObj.Translation);
         p.appendChild(t);
         scoreDisplay.appendChild(p);
+        ///////////////
+        //////////////
+        
+
+        //////////////
+        /////////////
         displayNewWord();
 
 

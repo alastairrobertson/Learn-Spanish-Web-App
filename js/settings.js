@@ -1,6 +1,7 @@
 //This JS file stores settings of the game
 window.settings = {};
 window.settings.currentUser = "user1";
+window.settings.sound = false;
 window.userScore = 0;
 window.successfulCount = 0;
 window.bonusScore = 1;
