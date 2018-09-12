@@ -245,7 +245,9 @@ function showSettings() {
         settingsPageElements.push(createCustomTextBox("userTextbox", settings.currentUser));
         settingsPageElements.push(createCustomButton("saveButton", "Save"));
         settingsPageElements.push(createCustomButton("backButton", "Back"));
-        
+        if (settings.loaded) {
+            document.getElementById("soundCheckbox").checked = settings.sound;
+        }
         var settingsDiv = createDiv();
         settingsDiv.id = "settingsDiv";
         for (i=0; i < settingsPageElements.length; i++) {
@@ -254,10 +256,12 @@ function showSettings() {
                     //save
                     var b = document.getElementById("userTextbox");
                     settings.currentUser = b.value;
+                    settings.loaded = true;
                     if (document.getElementById("soundCheckbox").checked) {
+                        settings.sound = true;
 
                     } else {
-
+                        settings.sound = false;
                     }
                 }
             }

@@ -18,6 +18,11 @@ function sleep(milliseconds) {
  
 
 function displayNewWord() {
+    if (settings.sound) {
+        console.log("correct sound");
+        var correctAudio = new Audio("sounds/correct.wav");
+        correctAudio.play();
+    }
     document.getElementById("draggableWord").remove();
     wordObject = null;
     p = null;
@@ -38,7 +43,8 @@ function displayNewWord() {
 function successfulDrag(targ, wordObj, wordElement) {
     if (targ.id == wordObj.Category) {
         console.log("we got a match");
-
+        
+        
         
         //s
         successfulCount++;
@@ -78,6 +84,11 @@ function successfulDrag(targ, wordObj, wordElement) {
 
     }
     else {
+        if (settings.sound) {
+            console.log("incorrect sound");
+            var incorrectAudio = new Audio("sounds/incorrect.wav");
+            incorrectAudio.play();
+        }
         //count restart
         successfulCount = 0;
         //bonus score multiplier restarted
