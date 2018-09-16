@@ -2,7 +2,7 @@
 // It's purpose is to set up the web app for use by showing the menu screen.
 //This method is only called by window.onload
 function loadApplication() {
-    
+    //ensure currentPage is null as application is loading
     window.currentPage = null;
     //showMenu
     showMenu();
@@ -24,8 +24,7 @@ function loadApplication() {
  showMenu() is a function that takes no parameters and does not return any values.
  It hides the current page, checks menuPage is undefined and then creates the elements required for the menu page.
  After adding elements, the new menu page will be set and then displayed.
- 
- 
+
  */ 
 window.showMenu = function() {
     //hide current page
@@ -56,12 +55,12 @@ window.showMenu = function() {
         menuBody = createDiv();
         menuBody.id = "menuBody";
         //create each button on the menu
-        for (i = 0; i < menuButtons.length; i++) {
+        for (current = 0; current < menuButtons.length; current++) {
             
             button = createButton();
-            var textNode = document.createTextNode(menuButtons[i]);
+            var textNode = document.createTextNode(menuButtons[current]);
             button.appendChild(textNode);
-            button.id = menuButtons[i];
+            button.id = menuButtons[current];
             menuBody.appendChild(button);
         }
         menuPage.appendChild(menuBody);
@@ -83,9 +82,6 @@ window.showMenu = function() {
  The reason why JSON was used to store an array in localSTorage is
  because json is a string and localSTorage can only save key value paris in strings.
  The highscores page is then set and displayed.
-
- 
- 
  */ 
 
 function showHighscores() {
@@ -110,9 +106,9 @@ function showHighscores() {
         console.log(highscoresStore);
         var highscoresElement = createDiv();
         highscoresElement.id = "highscoresElement";
-        for (i =0; i < highscoresStore.length; i++) {
+        for (current =0; current < highscoresStore.length; current++) {
             var d = createDiv();
-            var textNode = document.createTextNode(highscoresStore[i][0] + " - " + highscoresStore[i][1]);
+            var textNode = document.createTextNode(highscoresStore[current][0] + " - " + highscoresStore[current][1]);
             d.appendChild(textNode);
             highscoresElement.appendChild(d);
         }
@@ -120,7 +116,7 @@ function showHighscores() {
         var highscoresBackButton = createCustomButton("highscoresBackButton", "Back");
         highscoresDiv.appendChild(highscoresBackButton);
         highscoresPage.appendChild(highscoresDiv);
-        
+        //add menu button functionality
         highscoresBackButton.onclick = function() {
             showMenu();
         }
@@ -136,18 +132,7 @@ function showHighscores() {
     
 }
 
-// function createContainerWithChest(containerID, treasureChestLocation, textNode, id) {
-//     var chestImage = createChest(treasureChestLocation, id);
-//     var p = createParagraph();
-//     p.id = id;
-//     var t = document.createTextNode(textNode);
-//     var container = createDiv();
-//     container.id = containerID;
-//     p.appendChild(t);
-//     container.appendChild(chestImage);
-//     container.appendChild(p);
-//     return container;
-// }
+
 
 /* 
  What?
@@ -168,6 +153,8 @@ function showGame() {
     if (typeof window.gamePage === "undefined") {
         window.gamePage = createDiv();
         
+
+
         gamePage.classList.add("page");
         window.gamescoreDisplay = createParagraph();
         gamescoreDisplay.id = "gamescoreDisplay";
@@ -183,7 +170,17 @@ function showGame() {
             
             saveScore();
             //remove current word in preperations for next game
-            document.getElementById("draggableWord").remove();
+            var dragWord = document.getElementById("draggableWord");
+            if (dragWord != null) {
+                document.getElementById("draggableWord").remove();
+            }
+            //remove gamescoreDisplay
+            var gamescoreElement = document.getElementById("gamescoreDisplay");
+            if (gamescoreElement != null) {
+                document.getElementById("gamescoreDisplay").remove();
+            }
+            //level is reset to 0
+            level = 0;
             //show menu
             showMenu();
         };
@@ -196,9 +193,7 @@ function showGame() {
         gamePage.appendChild(createContainerWithChest("chest2", treasureChestLocation, "Greetings", "greetings"));
         gamePage.appendChild(createContainerWithChest("chest3", treasureChestLocation, "Numbers", "numbers"));
         gamePage.appendChild(createContainerWithChest("chest4", treasureChestLocation, "Eating Out", "eatingOut"));
-        
 
-        
     }
     //set the new page
     currentPage = gamePage;
@@ -239,18 +234,18 @@ function showInstructions() {
         //html elements, if the element is a button, 
         //then add the correct method to redirect the user to a new page
         //also add html elelments to the div
-        for (i=0; i < instructionsPageElements.length; i++) {
-            if (i == 2) {
-                instructionsPageElements[i].onclick = function() {
+        for (current=0; current < instructionsPageElements.length; current++) {
+            if (current == 2) {
+                instructionsPageElements[current].onclick = function() {
                     showGame();
                 }
             }
-            if (i == 3) {
-                instructionsPageElements[i].onclick = function() {
+            if (current == 3) {
+                instructionsPageElements[current].onclick = function() {
                     showMenu();
                 }
             }
-            instructionsDiv.appendChild(instructionsPageElements[i]);
+            instructionsDiv.appendChild(instructionsPageElements[current]);
         }
         //append div of instruction html elements to instructionsPage
         instructionsPage.appendChild(instructionsDiv);
@@ -287,25 +282,28 @@ function showSettings() {
         var settingsPageElements = [];
         var settingsContainer = createDiv();
         settingsContainer.id = "settingsContainer";
-        
+        //push elements to array
         settingsPageElements.push(createCustomLabelH1("settingsLabel", "Settings"));
         settingsPageElements.push(createCustomCheckbox("soundCheckbox", "Sound"));
         settingsPageElements.push(createCustomLabel("checkboxLabel", "Sound", "soundCheckbox"));
         settingsPageElements.push(createCustomTextBox("userTextbox", settings.currentUser));
         settingsPageElements.push(createCustomButton("saveButton", "Save"));
         settingsPageElements.push(createCustomButton("backButton", "Back"));
+        //check is sound is loaded
         if (settings.loaded) {
             document.getElementById("soundCheckbox").checked = settings.sound;
         }
         var settingsDiv = createDiv();
         settingsDiv.id = "settingsDiv";
-        for (i=0; i < settingsPageElements.length; i++) {
-            if (i == 4) {
-                settingsPageElements[i].onclick = function() {
+        //loop over settingsPageElements
+        for (current=0; current < settingsPageElements.length; current++) {
+            if (current == 4) {
+                settingsPageElements[current].onclick = function() {
                     //save
                     var b = document.getElementById("userTextbox");
                     settings.currentUser = b.value;
                     settings.loaded = true;
+                    //check if soundcheckbox is checked
                     if (document.getElementById("soundCheckbox").checked) {
                         settings.sound = true;
 
@@ -314,22 +312,19 @@ function showSettings() {
                     }
                 }
             }
-            if (i == 5) {
-                settingsPageElements[i].onclick = function() {
+            //add menu button functionality
+            if (current == 5) {
+                settingsPageElements[current].onclick = function() {
                     showMenu();
                 }
             }
             var newDiv = createDiv();
-            newDiv.appendChild(settingsPageElements[i]);
+            newDiv.appendChild(settingsPageElements[current]);
             settingsDiv.appendChild(newDiv);
-            //settingsDiv.appendChild(settingsPageElements[i]);
+            
             
         }
         settingsPage.appendChild(settingsDiv);
-        
-
-
-        
     }
     //set the new page
     currentPage = settingsPage;

@@ -201,7 +201,8 @@ window.createContainerWithChest = function(containerID, treasureChestLocation, t
 	var chestImage = createChest(treasureChestLocation, id);
     var paragraph = createParagraph();
     paragraph.id = id;
-    var text = document.createTextNode(textNode);
+	var text = document.createTextNode(textNode);
+	
     var container = createDiv();
     container.id = containerID;
     paragraph.appendChild(text);

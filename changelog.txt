@@ -1,15 +1,28 @@
 As part of the marking criteria - a list of days you worked and what you achieved
 
 prior - Planning, testing javascript concepts
+_____________________________________________________________________________________
 2nd of September - Set up the project, created a Git repo, added files, added images
+_____________________________________________________________________________________
 3rd of September - Created Menu page with buttons, image and text
+_____________________________________________________________________________________
 4th of September - Added chests and exit button to game page 
+_____________________________________________________________________________________
 5th of September - Implemented dragging and new word display
+_____________________________________________________________________________________
 8th of September - Implemented CSS animations
+_____________________________________________________________________________________
 9th of September - Got scoring working
+_____________________________________________________________________________________
 10th of September - testing game
+_____________________________________________________________________________________
 11th of September - Creating instructions page and styling it
-12th of September - Started implementing persistent storage on local machine for high scores
+_____________________________________________________________________________________
+12th of September - Started implementing persistent storage on local machine for high 
+scores
+_____________________________________________________________________________________
 13th of September - Created high scores page
+_____________________________________________________________________________________
 14th of September - display level on game
-
+_____________________________________________________________________________________
+15th of September - fixed up comments and annotated functions, fixed bugs

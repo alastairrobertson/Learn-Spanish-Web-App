@@ -22,7 +22,7 @@ There is nothing returned.
 */
 function sleep(milliseconds) {
     var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
+    for (var current = 0; current < 1e7; current++) {
       if ((new Date().getTime() - start) > milliseconds){
         break;
       }
@@ -136,7 +136,9 @@ It is a global function
 */
 
 window.gameEngine.beginGame = function() {
-    
+    gamescoreDisplay.id = "gamescoreDisplay";
+    gamescoreDisplay.innerHTML = "Gamescore: ";
+    gamePage.appendChild(gamescoreDisplay);
     wordObject = gameEngine.newWord();
     paragraph = createParagraph();
     paragraph.id = "draggableWord";
@@ -150,24 +152,13 @@ window.gameEngine.beginGame = function() {
     word = document.getElementById("draggableWord");
     word.setAttribute("draggable", "true");
 
-    /* events fired on the draggable target */
-    document.addEventListener("drag", function( event ) {
-        console.log("drag");
-
-    }, false);
-
-    document.addEventListener("dragstart", function( event ) {
-        console.log("dragstart");
-        // store a ref. on the dragged elem
-        dragged = event.target;
-        //event.target.style.visibility = "hidden";
-    }, false);
-
-    document.addEventListener("dragend", function( event ) {
-        console.log("dragend");
-
-    }, false);
-
+    /*
+    event listener is added for dragover which takes the following parameters
+    "dragover" is a string that represents the event type to listen for
+    the next parameter is a anonymous function that will be called when the event if fired
+    capture: A Boolean indicating that events of this type will be dispatched to the registered listener
+    before being dispatched to any EventTarget beneath it in the DOM tree.
+    */
     /* events fired on the drop targets */
     document.addEventListener("dragover", function( event ) {
         
@@ -175,18 +166,15 @@ window.gameEngine.beginGame = function() {
         event.preventDefault();
     }, false);
 
-    document.addEventListener("dragenter", function( event ) {
-        console.log("dragcenter");
-
-    }, false);
-
-    document.addEventListener("dragleave", function( event ) {
-        console.log("dragleave");
-        
-       
-
-    }, false);
-
+    
+    /*
+    event listener is added for drop which takes the following parameters
+    "drop" is a string that represents the event type to listen for
+    the next parameter is a anonymous function that will be called when the event if fired
+    capture: A Boolean indicating that events of this type will be dispatched to the registered listener
+    before being dispatched to any EventTarget beneath it in the DOM tree.
+    This event listener calles the successfulDrag function to check if a drag is correct
+    */
     document.addEventListener("drop", function( event ) {
         // prevent default action (open as link for some elements)
         console.log("drop");
@@ -197,12 +185,6 @@ window.gameEngine.beginGame = function() {
         console.log(event.target.id);
         console.log(wordObject);
         successfulDrag(event.target, wordObject, word);
-        
-        
-        
-
-        
-        
     }, false);
         
 

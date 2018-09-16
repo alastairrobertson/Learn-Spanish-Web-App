@@ -1,12 +1,20 @@
-//This JS file stores settings of the game
+
+//settings is a object that is used as a namespace for data organisation
 window.settings = {};
+//currentUser is a string that stores the current username being used in the game, it is updated in the settings page
 window.settings.currentUser = "user1";
+//loaded 
 window.settings.loaded = false;
+//sound is a boolean value that dictates if sound is to be used
 window.settings.sound = false;
+//userScore is a integer value that tracks the current game score
 window.userScore = 0;
+//succssfulCount counts the number of times during a game that a user gets the correct drags in a row
 window.successfulCount = 0;
+//bonusScore is a integer that tracks if bonus score is activated, the value will be two if it is activated
 window.bonusScore = 1;
-window.menuButtons = ["Instructions", "Game", "High Scores", "Settings"];
+//menuButtons is an array of strings that represent the menu buttons, this array will be looped over to display menu buttons
+window.menuButtons = ["Instructions", "Game", "Highscores", "Settings"];
 
 window.InstructionsString = "Welcome to this spanish learning web app! " +
                             "This app is designed to be be a fun activity for learning spanish. " +
@@ -35,33 +43,29 @@ window.saveScore = function() {
     if (this.localStorage.getItem("highscores") === null) {
         //local storage could not find highscores
         //we now create a new highscores
-        var v = [];
-        v.push([settings.currentUser, userScore]);
+        var vArray = [];
+        vArray.push([settings.currentUser, userScore]);
         
-        this.localStorage.setItem("highscores", JSON.stringify(v));
+        this.localStorage.setItem("highscores", JSON.stringify(vArray));
         
     } else {
-        
+        //localstorage item was detected
         var highscores = JSON.parse(this.localStorage.getItem("highscores"));
         console.log(typeof highscores);
         console.log(highscores);
         console.log(highscores.length);
-        for (i = 0; i < highscores.length; i++) {
-            if (highscores[i][1] < userScore) {
-                
-
-                var v = [settings.currentUser, userScore];
-                
+        //loop over highscores
+        for (item = 0; item < highscores.length; item++) {
+            //check if current user score is larger than highscores store
+            if (highscores[item][1] < userScore) {
+                var vArray = [settings.currentUser, userScore];       
                 console.log(settings.currentUser);
                 console.log(userScore);
-                highscores.splice(i, 0, v);
+                highscores.splice(item, 0, vArray);
                 this.localStorage.setItem("highscores", JSON.stringify(highscores));
                 break;
             }
         }
-
-
-
     }
     //reset score 
     userScore = 0;
