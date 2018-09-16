@@ -1,11 +1,25 @@
+//gameEngine is a global namespace object for organisation of code
 window.gameEngine = {};
+//level is a global variable that tracks the current level the user is playing at
+window.level = 0;
 
+
+/*
+This function takes no parameers but returns a gamedata object
+This function creates a random number that will be used to delect data from gameData
+It is a global function
+*/
 window.gameEngine.newWord = function() {
     randomNumber = Math.floor((Math.random() * gameData.length) + 1);
     console.log(randomNumber);
     return gameData[randomNumber - 1];
 
 }
+/*
+This function takes one parameter which is called milliseconds and is a integer
+This function simply sleeps for the time specificed in milliseconds, in the milliseconds param.
+There is nothing returned.
+*/
 function sleep(milliseconds) {
     var start = new Date().getTime();
     for (var i = 0; i < 1e7; i++) {
@@ -16,7 +30,12 @@ function sleep(milliseconds) {
   }
 
  
-
+/*
+This function does not have any parameters or returns any data
+displayNewWord checks if sound is turned on and will play the correct sound if true
+displayNewWord also removes the previous word and resets some objects and then generates a new wordObject
+displayNewWord sets up the game page to have a new word in the middle of the screen ready to be dragged to targets.
+*/
 function displayNewWord() {
     if (settings.sound) {
         console.log("correct sound");
@@ -25,28 +44,34 @@ function displayNewWord() {
     }
     document.getElementById("draggableWord").remove();
     wordObject = null;
-    p = null;
-    t = null;
+    paragraph = null;
+    textNode = null;
     wordObject = gameEngine.newWord();
-    p = createParagraph();
-    p.id = "draggableWord";
-    //p.removeC
-    t = document.createTextNode(wordObject.WordOrSentence)
-    p.appendChild(t);
-    gamePage.appendChild(p);
+    paragraph = createParagraph();
+    paragraph.id = "draggableWord";
+    
+    textNode = document.createTextNode(wordObject.WordOrSentence)
+    paragraph.appendChild(textNode);
+    gamePage.appendChild(paragraph);
     
     word = document.getElementById("draggableWord");
     word.setAttribute("draggable", "true");
 }
 
+/*
+successfulDrag takes three parameters
+targ is the target object 
+wordObj word object 
+wordElement is a html element
+It does not return a value
+successfulDrag updates userscore, gives last correct word translation, displays level and 
+creates a new word if target matches word
+if it does not match incorrect sound is player a incorrect animation will occur and bonusScore will be reset
 
+*/
 function successfulDrag(targ, wordObj, wordElement) {
     if (targ.id == wordObj.Category) {
         console.log("we got a match");
-        
-        
-        
-        //s
         successfulCount++;
         wordElement.style.visiblity = "hidden";
         if (successfulCount > 1) {
@@ -58,27 +83,28 @@ function successfulDrag(targ, wordObj, wordElement) {
         console.log(scoreDisplay);
 
         document.body.classList.add("success");
+        //remove "success" after 3 seconds to ensure success animation can be repeated
         setTimeout(function() {
             document.body.classList.remove("success");
         }, 1000 * 3);
-        
-
         scoreDisplay.innerHTML = null;
         scoreDisplay.innerHTML = "Gamescore: " + userScore;
         console.log(scoreDisplay.innerHTML);
         console.log("__________________________________________________");
         console.log(document.getElementById("draggableWord").childNodes[0]);
         
-        p = createParagraph();
-        t = document.createTextNode("Last correct word translation: " + wordObj.Translation);
-        p.appendChild(t);
-        scoreDisplay.appendChild(p);
-        ///////////////
-        //////////////
-        
+        paragraph = createParagraph();
+        textNode = document.createTextNode("Last correct word translation: " + wordObj.Translation);
+        paragraph.appendChild(textNode);
+        scoreDisplay.appendChild(paragraph);
 
-        //////////////
-        /////////////
+        level++;
+        
+        lev = createH1();
+        textNode = document.createTextNode("Level: " + level);
+        lev.appendChild(textNode);
+        scoreDisplay.appendChild(lev);
+        
         displayNewWord();
 
 
@@ -102,39 +128,27 @@ function successfulDrag(targ, wordObj, wordElement) {
 
     }
 }
+/*
+gameEngine.beginGame is a function that does not take parameters and does not return any values
+It sets up the game by creating a new word, making the word draggable and defines dragging events 
+It is a global function
 
+*/
 
 window.gameEngine.beginGame = function() {
-    //make each chest a target
-    var directionPlaces = document.getElementById("directionPlaces");
-    var greetings = document.getElementById("greetings");
-    var numbers = document.getElementById("numbers");
-    var eatingOut = document.getElementById("eatingOut");
     
-
-   
-
-
-
-    ////
-    //display first word
-    //displayNewWord();
     wordObject = gameEngine.newWord();
-    p = createParagraph();
-    p.id = "draggableWord";
-    t = document.createTextNode(wordObject.WordOrSentence)
-    p.appendChild(t);
+    paragraph = createParagraph();
+    paragraph.id = "draggableWord";
+    textNode = document.createTextNode(wordObject.WordOrSentence)
+    paragraph.appendChild(textNode);
     console.log("wahoo");
     console.log(gamePage);
-    gamePage.appendChild(p);
+    gamePage.appendChild(paragraph);
     console.log(gamePage);
     
     word = document.getElementById("draggableWord");
     word.setAttribute("draggable", "true");
-    
-    
-    
-    var dragged;
 
     /* events fired on the draggable target */
     document.addEventListener("drag", function( event ) {
@@ -151,13 +165,7 @@ window.gameEngine.beginGame = function() {
 
     document.addEventListener("dragend", function( event ) {
         console.log("dragend");
-        
-        
 
-
-
-
-        
     }, false);
 
     /* events fired on the drop targets */

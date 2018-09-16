@@ -1,8 +1,11 @@
 
 
 
-//menuStyling()
-//This method 
+/*
+menuSetup does not have any parameters and does not return any values
+menuSetup dynamically styles html elelments that were added in app.js (showMenu())
+menuSetup is a global function
+*/
 
 window.menuSetup = function() {
     //get elements
@@ -13,9 +16,7 @@ window.menuSetup = function() {
     window.gameButtonMenu = this.document.getElementById("Game");
     window.highscoresButtonMenu = this.document.getElementById("High Scores");
     window.settingsButtonMenu = this.document.getElementById("Settings");
-    
-
-
+ 
     //flag styling
     flag.style.width = "300px";
     flag.style.height = "auto";
@@ -26,9 +27,7 @@ window.menuSetup = function() {
     //welcome header styling
     welcomeHeader.style.textAlign = "center";
 
-
-    //general button styling 
-    
+    //general button styling     
     buttons.style.width = "300px";
     buttons.style.height = "100px";
     buttons.style.display = "grid";
@@ -39,32 +38,24 @@ window.menuSetup = function() {
     settingsButtonMenu.addEventListener("click", showSettings);
     instructionsButtonMenu.addEventListener("click", showInstructions);
     
-    
-    
-
-
-    
-    
-
-
-
-
 }
 
 
+/*
+highscoresSetup does not have any parameters or return any values
+highscoresSetup is a global function that alligns the label to the center
 
-window.highscoresSetup= function() {
+*/
+window.highscoresSetup = function() {
     var labelheader = this.document.getElementById("highscoreslabel");
-
-
     //style the label header
     labelheader.style.textAlign = "center";
 
-
-
-
 }
-
+/*
+gameElementsSetup does not have any parameters or return any values
+gameElementsSetup is a global function that creates global variables  for html elements
+*/
 window.gameElementsSetup = function() {
     //get elements
     window.directionPlaces = this.document.getElementById("directionPlaces");

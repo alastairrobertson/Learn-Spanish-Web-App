@@ -17,7 +17,16 @@ function loadApplication() {
     
 }
 
-
+ /* 
+ What?
+ Parameters?
+ Return?
+ showMenu() is a function that takes no parameters and does not return any values.
+ It hides the current page, checks menuPage is undefined and then creates the elements required for the menu page.
+ After adding elements, the new menu page will be set and then displayed.
+ 
+ 
+ */ 
 window.showMenu = function() {
     //hide current page
     if (currentPage != null)
@@ -30,8 +39,8 @@ window.showMenu = function() {
         header = createCustomElement("HEADER");
         //create heading
         welcomeLabel = createH1();
-        t = document.createTextNode("Welcome!");
-        welcomeLabel.appendChild(t);
+        var textNode = document.createTextNode("Welcome!");
+        welcomeLabel.appendChild(textNode);
         welcomeLabel.id = "welcomeHeader";
         header.appendChild(welcomeLabel);
         //create spanish flag for the heading
@@ -50,8 +59,8 @@ window.showMenu = function() {
         for (i = 0; i < menuButtons.length; i++) {
             
             button = createButton();
-            var t = document.createTextNode(menuButtons[i]);
-            button.appendChild(t);
+            var textNode = document.createTextNode(menuButtons[i]);
+            button.appendChild(textNode);
             button.id = menuButtons[i];
             menuBody.appendChild(button);
         }
@@ -66,6 +75,18 @@ window.showMenu = function() {
     //show the page
     currentPage.classList.remove("hide");
 }
+/* 
+
+ showHighscores does not have any parameters and does not return any values.
+ It displays the required HTML elelments for the highscores page.
+ It loops through the highscores array to expose a highscores list by parsing the JSON stored in localStorage.
+ The reason why JSON was used to store an array in localSTorage is
+ because json is a string and localSTorage can only save key value paris in strings.
+ The highscores page is then set and displayed.
+
+ 
+ 
+ */ 
 
 function showHighscores() {
     //hide current page
@@ -80,8 +101,8 @@ function showHighscores() {
         var highscoresDiv = createDiv();
         highscoresDiv.id = "highscoresDiv";
         highscoresLabel = window.createH1();
-        t = document.createTextNode("Highscores!");
-        highscoresLabel.appendChild(t);
+        var textNode = document.createTextNode("Highscores!");
+        highscoresLabel.appendChild(textNode);
         highscoresLabel.id = "highscoreslabel";
         highscoresDiv.appendChild(highscoresLabel);
         //loop through highscores
@@ -91,8 +112,8 @@ function showHighscores() {
         highscoresElement.id = "highscoresElement";
         for (i =0; i < highscoresStore.length; i++) {
             var d = createDiv();
-            var t = document.createTextNode(highscoresStore[i][0] + " - " + highscoresStore[i][1]);
-            d.appendChild(t);
+            var textNode = document.createTextNode(highscoresStore[i][0] + " - " + highscoresStore[i][1]);
+            d.appendChild(textNode);
             highscoresElement.appendChild(d);
         }
         highscoresDiv.appendChild(highscoresElement);
@@ -114,20 +135,30 @@ function showHighscores() {
     document.body.appendChild(currentPage);
     
 }
-function createContainerWithChest(containerID, treasureChestLocation, textNode, id) {
-    var chestImage = createChest(treasureChestLocation, id);
-    var p = createParagraph();
-    p.id = id;
-    var t = document.createTextNode(textNode);
-    var container = createDiv();
-    container.id = containerID;
-    p.appendChild(t);
-    container.appendChild(chestImage);
-    container.appendChild(p);
-    return container;
-}
+
+// function createContainerWithChest(containerID, treasureChestLocation, textNode, id) {
+//     var chestImage = createChest(treasureChestLocation, id);
+//     var p = createParagraph();
+//     p.id = id;
+//     var t = document.createTextNode(textNode);
+//     var container = createDiv();
+//     container.id = containerID;
+//     p.appendChild(t);
+//     container.appendChild(chestImage);
+//     container.appendChild(p);
+//     return container;
+// }
+
+/* 
+ What?
+ Parameters?
+ Return?
+ showGame() does not return any values or take any parameters
+ showGame() sets up the HTML elelments and sets up button functionality.
+ It appends treasurechest imgages to the screen and sets and displays the mneu page.
 
 
+ */ 
 function showGame() {
     //hide current page
     if (currentPage != null)
@@ -146,8 +177,10 @@ function showGame() {
         gameExit.id = "gameExit";
         gameExit.innerHTML = "Exit";
         gamePage.appendChild(gameExit);
+        //Anoymous function is assigned to the game exit button on click.
+        //The score is saved, current word displayed is removed and menu is show.ß
         gameExit.onclick = function() {
-            //maybe save score or something
+            
             saveScore();
             //remove current word in preperations for next game
             document.getElementById("draggableWord").remove();
@@ -158,7 +191,7 @@ function showGame() {
         //Create treasure chests for each corner
         var treasureChestLocation = "images/treasure_chest.png";
         
-        
+        //treasurechests ares setup and appended to the gamePage
         gamePage.appendChild(createContainerWithChest("chest1", treasureChestLocation, "Direction and Places", "directionPlaces"));
         gamePage.appendChild(createContainerWithChest("chest2", treasureChestLocation, "Greetings", "greetings"));
         gamePage.appendChild(createContainerWithChest("chest3", treasureChestLocation, "Numbers", "numbers"));
@@ -175,6 +208,15 @@ function showGame() {
     document.body.appendChild(currentPage);
     gameEngine.beginGame();
 }
+
+/* 
+
+ showInstructions does not take any parameters or return any values.
+ This function adds elements to the pgae and created button functionality
+ It then sets and displays the instructions page
+ 
+ */ 
+
 function showInstructions() {
     //hide current page
     if (currentPage != null)
@@ -226,6 +268,13 @@ function showInstructions() {
     currentPage.classList.remove("hide");
     document.body.appendChild(currentPage);
 }
+/* 
+ showSettings() does not take any parameters or return any values
+ showSettings() ses up HTML elements for the settings page.
+ It also loads session settings that have been saved previously.
+ It then sets and displays the settings page with session saved settings.
+ 
+ */ 
 function showSettings() {
     //hide current page
     if (currentPage != null)

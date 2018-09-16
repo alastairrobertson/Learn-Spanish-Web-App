@@ -21,9 +21,17 @@ window.InstructionsString = "Welcome to this spanish learning web app! " +
                             "along with the Last correct word translation being display under the gamescore. " +
                             "If you get two correct drags in a row, you will activate bonuscore which doubles the points you get on a correct drag streak. " +
                             "";
+
+
+/*
+saveScore take no parameters and does not return any values
+saveScore tries to get highscores data from localStoage
+it also ensures that the highscores is decsending by score
+and all scoring data is reset for the next gane
+It is a global function 
+*/
 window.saveScore = function() {
-    
-    
+  
     if (this.localStorage.getItem("highscores") === null) {
         //local storage could not find highscores
         //we now create a new highscores
@@ -55,9 +63,6 @@ window.saveScore = function() {
 
 
     }
-   
-    
-    
     //reset score 
     userScore = 0;
     successfulCount = 0;
