@@ -115,11 +115,13 @@ button {
     -khtml-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     padding-top: 15%;
+    font-size: 20px;
       
 }
 #chest4 p {
     padding-bottom: 15%;
     text-align: right;
+    font-size: 20px;
 }
 #chest3 p {
     transform: scale(1, 1);
@@ -129,6 +131,7 @@ button {
     -khtml-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     padding-bottom: 15%;
+    font-size: 20px;
 }
 #numbers
 {
@@ -149,6 +152,7 @@ button {
     
     padding-top: 15%;
     text-align: right;
+    font-size: 20px;
 
 }
 
@@ -311,7 +315,7 @@ button {
     #Settings {
         font-size: 14px;
     }
-    
+   
     
     
     

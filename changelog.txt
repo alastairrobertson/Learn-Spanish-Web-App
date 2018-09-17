@@ -3,26 +3,41 @@ As part of the marking criteria - a list of days you worked and what you achieve
 prior - Planning, testing javascript concepts
 _____________________________________________________________________________________
 2nd of September - Set up the project, created a Git repo, added files, added images
+Summary: I have made a small but necessary step on starting development, I have created a basic skeleton app but I still have loads of development to do. 
 _____________________________________________________________________________________
 3rd of September - Created Menu page with buttons, image and text
+Summary: I have created a function that hides the current homepage which is the menu page, I have appending images, buttons and text and now I need to add functionality to these elements.
 _____________________________________________________________________________________
 4th of September - Added chests and exit button to game page 
+Summary: The game page has been created but now I need to add functionality to the chests to ensure they can handle elements being dragged and dropped on them.
 _____________________________________________________________________________________
 5th of September - Implemented dragging and new word display
+Summary: Now I have dragging implemented it would be nice to add scoring, levels and animations.
 _____________________________________________________________________________________
 8th of September - Implemented CSS animations
+Summary: Now CSS animations makes the app respond to the user if they are correct or incorrect it would be nice to add sound to add to this effect. I should work on scoring next.
 _____________________________________________________________________________________
 9th of September - Got scoring working
+Summary: Implemented scoring, bonus scores and levels. Now I need to start testing and thinking about ensuring this game is easy to use on mobile screens as I have been primarily developing for my laptop screen.
 _____________________________________________________________________________________
-10th of September - testing game
+10th of September - testing game and added sound
+Summary: added sound which makes the game more engaging, now I need to start making pages for instructions and settings.
 _____________________________________________________________________________________
 11th of September - Creating instructions page and styling it
+Summary: Created instructions page so I need to create a high scores page, I need to work out if I will create persistent storage for the high scores. 
 _____________________________________________________________________________________
 12th of September - Started implementing persistent storage on local machine for high 
 scores
+Summary: I have managed to store the high scores array in a local storage key value pair by using the JSON function stringify. I need to create the actual high scores page and render the high scores.
 _____________________________________________________________________________________
 13th of September - Created high scores page
+Summary: Now that the high scores page has been created, I need to start looking at fixing small bugs and updating the licenses file.
 _____________________________________________________________________________________
 14th of September - display level on game
+Summary: Now I have levels working, I need to ensure my code is correctly commented for future developers.
 _____________________________________________________________________________________
 15th of September - fixed up comments and annotated functions, fixed bugs
+Summary: I ensured all functions mention parameters, return types, what the function does and if it is a global function. I need to update the licenses file and start thinking about adding attributions. 
+_____________________________________________________________________________________
+16th of September - updates licenses file, added attributions inside the app
+
