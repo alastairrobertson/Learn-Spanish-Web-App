@@ -1,7 +1,9 @@
 //gameEngine is a global namespace object for organisation of code
 window.gameEngine = {};
 //level is a global variable that tracks the current level the user is playing at
-window.level = 0;
+window.level = 1;
+//correctCount is a global variable that tracks when a new level should be incremented
+window.correctCount = 0;
 
 
 /*
@@ -98,12 +100,20 @@ function successfulDrag(targ, wordObj, wordElement) {
         paragraph.appendChild(textNode);
         scoreDisplay.appendChild(paragraph);
 
-        level++;
+
+
+        correctCount++;
+        if (correctCount == 20) {
+            correctCount = 0;
+            level++;
         
-        lev = createH1();
-        textNode = document.createTextNode("Level: " + level);
-        lev.appendChild(textNode);
-        scoreDisplay.appendChild(lev);
+            lev = createH1();
+            textNode = document.createTextNode("Level: " + level);
+            lev.appendChild(textNode);
+            scoreDisplay.appendChild(lev);
+        } 
+
+        
         
         displayNewWord();
 
