@@ -11,9 +11,8 @@ function loadApplication() {
     //style the menu
     menuSetup();
     //Setup buttons on menu
-    
-
-
+    console.log(gameData.length);
+  
     
 }
 
@@ -106,13 +105,18 @@ function showHighscores() {
         console.log(highscoresStore);
         var highscoresElement = createDiv();
         highscoresElement.id = "highscoresElement";
-        for (current =0; current < highscoresStore.length; current++) {
-            var d = createDiv();
-            var textNode = document.createTextNode(highscoresStore[current][0] + " - " + highscoresStore[current][1]);
-            d.appendChild(textNode);
-            highscoresElement.appendChild(d);
+        for (current = 0; current < highscoresStore.length; current++) {
+            //max of 16 highscores being displayed
+            if (current < 15) {
+                var scoresElement = createDiv();
+                var textNode = document.createTextNode(highscoresStore[current][0] + " - " + highscoresStore[current][1]);
+                scoresElement.appendChild(textNode);
+                highscoresElement.appendChild(scoresElement)
+            }
+            
         }
         highscoresDiv.appendChild(highscoresElement);
+        
         var highscoresBackButton = createCustomButton("highscoresBackButton", "Back");
         highscoresDiv.appendChild(highscoresBackButton);
         highscoresPage.appendChild(highscoresDiv);
@@ -152,9 +156,6 @@ function showGame() {
     //check if the page hasn't been duplicated
     if (typeof window.gamePage === "undefined") {
         window.gamePage = createDiv();
-        
-
-
         gamePage.classList.add("page");
         window.gamescoreDisplay = createParagraph();
         gamescoreDisplay.id = "gamescoreDisplay";
@@ -222,9 +223,14 @@ function showInstructions() {
         window.instructionsPage = createDiv();
         instructionsPage.classList.add("page");
         var instructionsPageElements = [];
+        var img = createImg();
+        img.src = "images/spanish_words.jpg";
+        img.id = "spanishWords";
         //push reuseable ui components to array
         instructionsPageElements.push(createCustomLabelH1("instructionsLabel", "Instructions"));
+        instructionsPageElements.push(img);
         instructionsPageElements.push(createCustomParagraph("instructionsParagraph", InstructionsString));
+        instructionsPageElements.push(createCustomParagraph("legalParagraph", legalString));
         instructionsPageElements.push(createCustomButton("playButton", "Play Now"));
         instructionsPageElements.push(createCustomButton("menuButton", "Menu"));
         
@@ -235,12 +241,12 @@ function showInstructions() {
         //then add the correct method to redirect the user to a new page
         //also add html elelments to the div
         for (current=0; current < instructionsPageElements.length; current++) {
-            if (current == 2) {
+            if (current == 4) {
                 instructionsPageElements[current].onclick = function() {
                     showGame();
                 }
             }
-            if (current == 3) {
+            if (current == 5) {
                 instructionsPageElements[current].onclick = function() {
                     showMenu();
                 }
@@ -296,7 +302,7 @@ function showSettings() {
         var settingsDiv = createDiv();
         settingsDiv.id = "settingsDiv";
         //loop over settingsPageElements
-        for (current=0; current < settingsPageElements.length; current++) {
+        for (current = 0; current < settingsPageElements.length; current++) {
             if (current == 4) {
                 settingsPageElements[current].onclick = function() {
                     //save
@@ -306,7 +312,6 @@ function showSettings() {
                     //check if soundcheckbox is checked
                     if (document.getElementById("soundCheckbox").checked) {
                         settings.sound = true;
-
                     } else {
                         settings.sound = false;
                     }
@@ -333,11 +338,6 @@ function showSettings() {
     currentPage.classList.remove("hide");
     document.body.appendChild(currentPage);
 }
-
-
-
-
-
 
 
 //this ensures elements are loaded and accessible

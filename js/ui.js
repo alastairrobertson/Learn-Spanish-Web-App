@@ -130,18 +130,7 @@ window.createCustomLabelH1 = function(id, text) {
 	return element;
 
 }
-/* 
- createInstructionsElements take no parameters and returns no values.
- This function creates two buttons, one paragraph and one header1 html elements
-It is a a global function.
- */ 
-window.createInstructionsElements = function() {
-	var instructionsPlayButton = createButton();
-	var instructionsExitButton = createButton();
-	var instructionsText = createParagraph();
-	var instructionsLabel = createH1();
 
-}
 /* 
  createCustomTextBox takes two parameters, id is a string that is used for the new input element id and
  text is a string that represents that the input html element will display

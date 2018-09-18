@@ -7,4 +7,6 @@ treasure_chest.png, CC0 Creative Commons, OpenClipart-Vectors, https://pixabay.c
 
 spanish_flag.png, CC0 Creative Commons, Clker-Free-Vector-Images, https://pixabay.com/en/spain-flag-spanish-national-ensign-28530/ 
 
+spanish_words.jpg, CC0 Creative Commons, 777546, https://pixabay.com/en/spanish-language-error-learn-speak-761512/
+
 

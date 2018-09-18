@@ -9,8 +9,13 @@ body {
     height: 100vh;
     z-index: 1; /* above other elements */
 }
-#gamescoreDisplay {
-    
+
+#spanishWords {
+    width: 350px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .hide {
     display: none;
@@ -18,7 +23,24 @@ body {
 }
 button {
     background: forestgreen;
+    
 }
+#playButton,
+#menuButton,
+#gameExit,
+#saveButton,
+#highscoresBackButton,
+#backButton {
+    width: 70px;
+    height: auto;
+    display: inline;
+    border-style: solid;
+    border-color: lightseagreen;
+    border-width: medium;
+}
+
+
+
 #userTextbox {
     margin-bottom: 10px;
 }
@@ -187,13 +209,39 @@ button {
 #gamescoreDisplay {
     text-align: center;
 }
+#welcomeHeader,
+#instructionsLabel,
+#highscoreslabel,
+#settingsLabel {
+    color: darkgreen;
+}
 
 #instructionsDiv {
     text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    
 }
+
 #instructionsParagraph {
-    padding-left: 30%;
-    padding-right: 30%;
+    
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: forestgreen;
+    
+    
+}
+#legalParagraph {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: forestgreen;
+}
+
+#highscoresElement {
+    background-color: forestgreen;
+    font-size: 25px;
+    width: 40%;
+    margin: 0 auto;
 }
 #settingsDiv {
     text-align: center;
@@ -203,6 +251,9 @@ button {
 }
 #highscoresDiv {
     text-align: center;
+}
+#highscoresElement {
+    margin-bottom: 1%;
 }
 
 /* 

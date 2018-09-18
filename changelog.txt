@@ -39,5 +39,9 @@ ________________________________________________________________________________
 15th of September - fixed up comments and annotated functions, fixed bugs
 Summary: I ensured all functions mention parameters, return types, what the function does and if it is a global function. I need to update the licenses file and start thinking about adding attributions. 
 _____________________________________________________________________________________
-16th of September - updates licenses file, added attributions inside the app
+16th of September - updates licenses file, added legal section in the instructions page
+Summary: I need to start working on making the app optimised for mobile and tablets
+_____________________________________________________________________________________
+18th of September - styled pages, testing
+Summary: The Spanish web app is nearly done, I am conducting tests and now I need to create a video to explain my app.
 
