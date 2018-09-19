@@ -101,8 +101,9 @@ function successfulDrag(targ, wordObj, wordElement) {
         scoreDisplay.appendChild(paragraph);
 
 
-
+        //increment the amount of times we completed a drag that was correct
         correctCount++;
+        //if correctCount is 20, then a new level is activated
         if (correctCount == 20) {
             correctCount = 0;
             level++;

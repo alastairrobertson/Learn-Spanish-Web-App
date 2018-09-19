@@ -309,6 +309,7 @@ function showSettings() {
                     var b = document.getElementById("userTextbox");
                     settings.currentUser = b.value;
                     settings.loaded = true;
+                    console.log(settings.currentUser);
                     //check if soundcheckbox is checked
                     if (document.getElementById("soundCheckbox").checked) {
                         settings.sound = true;

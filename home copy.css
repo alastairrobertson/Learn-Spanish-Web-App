@@ -1,0 +1,373 @@
+body {
+    background-color: #729C34;
+}
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1; /* above other elements */
+}
+
+#spanishWords {
+    width: 350px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hide {
+    display: none;
+    z-index: -1; /* moves this behind others */
+}
+button {
+    background: forestgreen;
+    
+}
+#playButton,
+#menuButton,
+#gameExit,
+#saveButton,
+#highscoresBackButton,
+#backButton {
+    width: 70px;
+    height: auto;
+    display: inline;
+    border-style: solid;
+    border-color: lightseagreen;
+    border-width: medium;
+}
+
+
+
+#userTextbox {
+    margin-bottom: 10px;
+}
+#highscoresElement {
+    margin-bottom: 10px;
+}
+#flag {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#welcomeHeader {
+    text-align: center;
+    font-size: -webkit-xxx-large;
+}
+#menuBody {
+    width: 500px;
+    height: 300px;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#Instructions,
+#Game,
+#Highscores,
+#Settings {
+    font-size: 24px;
+}
+
+
+
+.success {
+    animation-name: correct;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+@keyframes correct {
+    0% {
+        background-color:  #729C34;
+    }
+    50% {
+        background-color: rgb(153, 255, 0);
+    }
+    100% {
+        background-color:  #729C34;
+    }
+}
+
+.fail {
+    animation-name: incorrect;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+@keyframes incorrect {
+    0% {
+        background-color: #729C34;
+    }
+    50% {
+        background-color: red;
+    }
+    100% {
+        background-color: #729C34;
+    }
+}
+
+
+
+#directionPlaces {
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -khtml-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    width: 15%;
+    height: auto;
+    position: absolute;
+    top: 0; left: 0;
+    display: inline-block;
+    
+    
+    
+}
+#chest1 p {
+    transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -khtml-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    padding-top: 15%;
+    font-size: 20px;
+      
+}
+#chest4 p {
+    padding-bottom: 15%;
+    text-align: right;
+    font-size: 20px;
+}
+#chest3 p {
+    transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -khtml-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    padding-bottom: 15%;
+    font-size: 20px;
+}
+#numbers
+{
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -khtml-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    width: 15%;
+    height: auto;
+    position: absolute;
+    bottom: 0%; left: 0;
+    
+    
+}
+#chest2 p {
+    
+    padding-top: 15%;
+    text-align: right;
+    font-size: 20px;
+
+}
+
+#draggableWord {
+    text-align: center;
+    position: relative;
+    bottom: 50%;
+    top: 35%;
+    font-size: 200%;
+}
+
+#greetings {
+    width: 15%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0%;
+}
+#eatingOut {
+    width: 15%;
+    height: auto;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
+#gameExit {
+    position: absolute;
+    bottom: 0%;
+    right: 50%;
+    left: 50%;
+}
+#gamescoreDisplay {
+    text-align: center;
+}
+#welcomeHeader,
+#instructionsLabel,
+#highscoreslabel,
+#settingsLabel {
+    color: darkgreen;
+}
+
+#instructionsDiv {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    
+}
+
+#instructionsParagraph {
+    
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: forestgreen;
+    
+    
+}
+#legalParagraph {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: forestgreen;
+}
+
+#highscoresElement {
+    background-color: forestgreen;
+    font-size: 25px;
+    width: 40%;
+    margin: 0 auto;
+}
+#settingsDiv {
+    text-align: center;
+}
+#soundCheckbox {
+    padding-bottom: 10%;
+}
+#highscoresDiv {
+    text-align: center;
+}
+#highscoresElement {
+    margin-bottom: 1%;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+    
+    
+}
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+@media (min-width: 1025px) and (max-width: 1280px) {
+    
+    
+    
+}
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+    
+    
+}
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    
+    
+}
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+@media (min-width: 481px) and (max-width: 767px) {
+    #flag {
+        width: 150px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #welcomeHeader {
+        text-align: center;
+        font-size: -webkit-xxx-large;
+    }
+    #menuBody {
+        width: 150px;
+        height: 50px;
+        display: grid;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    #Instructions,
+    #Game,
+    #Highscores,
+    #Settings {
+        font-size: 15px;
+    }
+    
+    
+}
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+@media (min-width: 320px) and (max-width: 480px) {
+    #flag {
+        width: 200px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #welcomeHeader {
+        text-align: center;
+        font-size: -webkit-xxx-large;
+    }
+    #menuBody {
+        width: 200px;
+        height: 200px;
+        display: grid;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    #Instructions,
+    #Game,
+    #Highscores,
+    #Settings {
+        font-size: 14px;
+    }
+   
+    
+    
+    
+}
