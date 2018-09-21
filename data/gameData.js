@@ -1,5 +1,6 @@
 //JSOn game data is here.
 //gameData is a object with three key value pairs
+//All key value pairs are strings
 window.gameData = [
     {
       "Category": "directionPlaces",

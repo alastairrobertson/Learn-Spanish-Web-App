@@ -44,4 +44,6 @@ Summary: I need to start working on making the app optimised for mobile and tabl
 _____________________________________________________________________________________
 18th of September - styled pages, testing
 Summary: The Spanish web app is nearly done, I am conducting tests and now I need to create a video to explain my app.
-
+_____________________________________________________________________________________
+19th of September - Created video, compressed video
+Summary: Created a long video (32mins), then created a short video (8 mins) and compressed it

@@ -157,6 +157,7 @@ function showGame() {
     if (typeof window.gamePage === "undefined") {
         window.gamePage = createDiv();
         gamePage.classList.add("page");
+        //create elements
         window.gamescoreDisplay = createParagraph();
         gamescoreDisplay.id = "gamescoreDisplay";
         gamescoreDisplay.innerHTML = "Gamescore: ";
@@ -226,7 +227,7 @@ function showInstructions() {
         var img = createImg();
         img.src = "images/spanish_words.jpg";
         img.id = "spanishWords";
-        //push reuseable ui components to array
+        //push reuseable ui components to array which will be looped over later
         instructionsPageElements.push(createCustomLabelH1("instructionsLabel", "Instructions"));
         instructionsPageElements.push(img);
         instructionsPageElements.push(createCustomParagraph("instructionsParagraph", InstructionsString));
@@ -243,11 +244,13 @@ function showInstructions() {
         for (current=0; current < instructionsPageElements.length; current++) {
             if (current == 4) {
                 instructionsPageElements[current].onclick = function() {
+                    //activate game
                     showGame();
                 }
             }
             if (current == 5) {
                 instructionsPageElements[current].onclick = function() {
+                    //return to menu
                     showMenu();
                 }
             }
@@ -285,6 +288,7 @@ function showSettings() {
     if (typeof window.settingsPage === "undefined") {
         window.settingsPage = createDiv();
         settingsPage.classList.add("page");
+        //create elements
         var settingsPageElements = [];
         var settingsContainer = createDiv();
         settingsContainer.id = "settingsContainer";
@@ -307,13 +311,16 @@ function showSettings() {
                 settingsPageElements[current].onclick = function() {
                     //save
                     var b = document.getElementById("userTextbox");
+                    //set value from textbox to the global variable of currentUser in the settings object
                     settings.currentUser = b.value;
                     settings.loaded = true;
                     console.log(settings.currentUser);
                     //check if soundcheckbox is checked
                     if (document.getElementById("soundCheckbox").checked) {
+                        //sound is turned on
                         settings.sound = true;
                     } else {
+                        //sound is turned off
                         settings.sound = false;
                     }
                 }
@@ -321,9 +328,11 @@ function showSettings() {
             //add menu button functionality
             if (current == 5) {
                 settingsPageElements[current].onclick = function() {
+                    //take user back to menu
                     showMenu();
                 }
             }
+            //add to page
             var newDiv = createDiv();
             newDiv.appendChild(settingsPageElements[current]);
             settingsDiv.appendChild(newDiv);
@@ -341,5 +350,5 @@ function showSettings() {
 }
 
 
-//this ensures elements are loaded and accessible
+//this ensures elements are loaded and accessible and is the starting point of the application
 window.onload = loadApplication;

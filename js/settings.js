@@ -41,7 +41,6 @@ and all scoring data is reset for the next gane
 It is a global function 
 */
 window.saveScore = function() {
-  
     if (this.localStorage.getItem("highscores") === null) {
         //local storage could not find highscores
         //we now create a new highscores

@@ -24,6 +24,7 @@ There is nothing returned.
 */
 function sleep(milliseconds) {
     var start = new Date().getTime();
+    console.log(start);
     for (var current = 0; current < 1e7; current++) {
       if ((new Date().getTime() - start) > milliseconds){
         break;
@@ -39,6 +40,7 @@ displayNewWord also removes the previous word and resets some objects and then g
 displayNewWord sets up the game page to have a new word in the middle of the screen ready to be dragged to targets.
 */
 function displayNewWord() {
+    console.log("sound " + settings.sound);
     if (settings.sound) {
         console.log("correct sound");
         var correctAudio = new Audio("sounds/correct.wav");
@@ -51,7 +53,7 @@ function displayNewWord() {
     wordObject = gameEngine.newWord();
     paragraph = createParagraph();
     paragraph.id = "draggableWord";
-    
+    //create text and display it
     textNode = document.createTextNode(wordObject.WordOrSentence)
     paragraph.appendChild(textNode);
     gamePage.appendChild(paragraph);
@@ -72,6 +74,9 @@ if it does not match incorrect sound is player a incorrect animation will occur 
 
 */
 function successfulDrag(targ, wordObj, wordElement) {
+    console.log(targ);
+    console.log(wordObj);
+    console.log(wordElement);
     if (targ.id == wordObj.Category) {
         console.log("we got a match");
         successfulCount++;
@@ -79,7 +84,7 @@ function successfulDrag(targ, wordObj, wordElement) {
         if (successfulCount > 1) {
             bonusScore = 2;
         }
-
+        //increase userscore
         userScore = (bonusScore * 1) + userScore;
         var scoreDisplay = document.getElementById("gamescoreDisplay");
         console.log(scoreDisplay);
@@ -89,12 +94,13 @@ function successfulDrag(targ, wordObj, wordElement) {
         setTimeout(function() {
             document.body.classList.remove("success");
         }, 1000 * 3);
+        //reset score display for new gamescore
         scoreDisplay.innerHTML = null;
         scoreDisplay.innerHTML = "Gamescore: " + userScore;
         console.log(scoreDisplay.innerHTML);
         console.log("__________________________________________________");
         console.log(document.getElementById("draggableWord").childNodes[0]);
-        
+        //create word translation paragraph on page
         paragraph = createParagraph();
         textNode = document.createTextNode("Last correct word translation: " + wordObj.Translation);
         paragraph.appendChild(textNode);
@@ -121,6 +127,7 @@ function successfulDrag(targ, wordObj, wordElement) {
 
     }
     else {
+        //unsuccessful drag (was not correct)
         if (settings.sound) {
             console.log("incorrect sound");
             var incorrectAudio = new Audio("sounds/incorrect.wav");
@@ -131,6 +138,7 @@ function successfulDrag(targ, wordObj, wordElement) {
         //bonus score multiplier restarted
         bonusScore = 1;
         document.body.classList.add("fail");
+        //remove fail class in three seconds so it can be activated again
         setTimeout(function() {
             document.body.classList.remove("fail");
         }, 1000 * 3);
@@ -147,19 +155,22 @@ It is a global function
 */
 
 window.gameEngine.beginGame = function() {
+    //set id and innerHTML for gamescore display
     gamescoreDisplay.id = "gamescoreDisplay";
     gamescoreDisplay.innerHTML = "Gamescore: ";
     gamePage.appendChild(gamescoreDisplay);
+    //generate new word
     wordObject = gameEngine.newWord();
     paragraph = createParagraph();
     paragraph.id = "draggableWord";
+    //create text node with spanish word
     textNode = document.createTextNode(wordObject.WordOrSentence)
     paragraph.appendChild(textNode);
-    console.log("wahoo");
+    
     console.log(gamePage);
     gamePage.appendChild(paragraph);
     console.log(gamePage);
-    
+    //make draggableWord "draggable"
     word = document.getElementById("draggableWord");
     word.setAttribute("draggable", "true");
 
@@ -172,7 +183,7 @@ window.gameEngine.beginGame = function() {
     */
     /* events fired on the drop targets */
     document.addEventListener("dragover", function( event ) {
-        
+        console.log(event);
         // prevent default to allow drop
         event.preventDefault();
     }, false);
@@ -195,6 +206,7 @@ window.gameEngine.beginGame = function() {
         console.log(event.target);
         console.log(event.target.id);
         console.log(wordObject);
+        //check if successfulDrag was correct
         successfulDrag(event.target, wordObject, word);
     }, false);
         

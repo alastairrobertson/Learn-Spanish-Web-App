@@ -73,6 +73,7 @@ window.createImg = function() {
  It is a a global function.
  */ 
 window.createCustomElement = function(customElement) {
+	console.log(customElement);
 	return document.createElement(customElement);
 }
 /* 
@@ -82,9 +83,12 @@ window.createCustomElement = function(customElement) {
  It is a a global function.
  */ 
 window.createChest = function(src, id) {
+	console.log(src);
+	console.log(id);
 	var element = createImg();
 	element.src = src;
 	element.id = id;
+	console.log(element);
 	return element;
 	
 
@@ -97,10 +101,13 @@ window.createChest = function(src, id) {
  It is a a global function.
  */ 
 window.createCustomButton = function(id, text) {
+	console.log(id);
+	console.log(text);
 	var element = createButton();
 	element.id = id;
 	var textNode = document.createTextNode(text);
 	element.appendChild(textNode);
+	console.log(element);
 	return element;
 }
 /* 
@@ -110,10 +117,13 @@ window.createCustomButton = function(id, text) {
  It is a a global function.
  */ 
 window.createCustomParagraph = function(id, text) {
+	console.log(id);
+	console.log(text);
 	var element = createParagraph();
 	element.id = id;
 	var textNode = this.document.createTextNode(text);
 	element.appendChild(textNode);
+	console.log(element);
 	return element;
 }
 /* 
@@ -123,10 +133,13 @@ window.createCustomParagraph = function(id, text) {
  It is a a global function.
  */ 
 window.createCustomLabelH1 = function(id, text) {
+	console.log(id);
+	console.log(text);
 	var element = createH1();
 	element.id = id;
 	var textNode = this.document.createTextNode(text);
 	element.appendChild(textNode);
+	console.log(element);
 	return element;
 
 }
@@ -138,12 +151,15 @@ window.createCustomLabelH1 = function(id, text) {
  It is a a global function.
  */ 
 window.createCustomTextBox = function(id, text) {
+	console.log(id);
+	console.log(text);
 	var element = createCustomElement("input");
 	element.type = "text";
 	element.value = text;
 	element.id = id;
 	var textNode = this.document.createTextNode(text);
 	element.appendChild(textNode);
+	console.log(element);
 	return element;
 }
 /* 
@@ -153,11 +169,14 @@ window.createCustomTextBox = function(id, text) {
  It is a a global function.
  */ 
 window.createCustomCheckbox = function(id, text) {
+	console.log(id);
+	console.log(text);
 	var element = createCustomElement("input");
 	element.type = "checkbox";
 	//element.name = "name";
 	element.value = text;
 	element.id = id;
+	console.log(element);
 	return element
 }
 /* 
@@ -168,10 +187,14 @@ window.createCustomCheckbox = function(id, text) {
  It is a a global function.
  */ 
 window.createCustomLabel = function(id, text, checkboxID) {
+	console.log(id);
+	console.log(text);
+	console.log(checkboxID);
 	element = createCustomElement("label");
 	element.id = id;
 	element.htmlFor = checkboxID;
 	element.appendChild(this.document.createTextNode(text));
+	console.log(element);
 	return element;
 
 
@@ -187,6 +210,10 @@ window.createCustomLabel = function(id, text, checkboxID) {
  It is a a global function.
  */ 
 window.createContainerWithChest = function(containerID, treasureChestLocation, textNode, id) {
+	console.log(containerID);
+	console.log(treasureChestLocation);
+	console.log(textNode);
+	console.log(id);
 	var chestImage = createChest(treasureChestLocation, id);
     var paragraph = createParagraph();
     paragraph.id = id;
@@ -196,7 +223,8 @@ window.createContainerWithChest = function(containerID, treasureChestLocation, t
     container.id = containerID;
     paragraph.appendChild(text);
     container.appendChild(chestImage);
-    container.appendChild(paragraph);
+	container.appendChild(paragraph);
+	console.log(container);
     return container;
 
 }
